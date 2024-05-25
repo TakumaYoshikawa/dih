@@ -333,3 +333,7 @@
         !!! indent ""
             [スクリプト本文中](#furoku-convert-script-this)の**# 拡張機能を有効化**の部分にて拡張機能のカスタマイズを行うことができる。<br />
             カスタマイズにあたっては[Python-Markdown公式ドキュメント](https://python-markdown.github.io/extensions/)を参照すること。
+
+    ## サンプル
+    !!! indent ""
+        本ドキュメントの生成元たる一式ファイルは[此処](https://github.com/TakumaYoshikawa/dih/tree/master/src/docs)にある。<br />
