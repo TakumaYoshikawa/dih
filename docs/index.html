@@ -1,20 +1,20 @@
 <style>h1 {
-    background-color: #00bbddff;
+    background-color: #64cadcff;
     padding: 6px 2px;
 }
 
 h2 {
-    background-color: #00bbddcc;
+    background-color: #64cadccc;
     padding: 4px 2px;
 }
 
 h3 {
-    background-color: #00bbdd99;
+    background-color: #64cadc99;
     padding: 2px 2px;
 }
 
 h4 {
-    background-color: #00bbdd66;
+    background-color: #64cadc66;
     padding: 1px 2px;
 }
 
@@ -47,6 +47,507 @@ td {
     padding-left: 4px;
     padding-right: 8px;
 }
-</style><h1 id="_1">はじめに</h1>
-<p>このドキュメントは、あらゆるドキュメントをHTML形式にて生成することを目的とし、<br />
-そのための手法を説明する。</p>
+
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.codehilite .hll { background-color: #ffffcc }
+.codehilite { background: #eeeeee; padding-top: 1px; padding-bottom: 1px}
+.codehilite .c { color: #3D7B7B; font-style: italic } /* Comment */
+.codehilite .err { border: 1px solid #FF0000 } /* Error */
+.codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+.codehilite .o { color: #666666 } /* Operator */
+.codehilite .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.codehilite .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.codehilite .cp { color: #9C6500 } /* Comment.Preproc */
+.codehilite .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.codehilite .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.codehilite .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.codehilite .gd { color: #A00000 } /* Generic.Deleted */
+.codehilite .ge { font-style: italic } /* Generic.Emph */
+.codehilite .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.codehilite .gr { color: #E40000 } /* Generic.Error */
+.codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.codehilite .gi { color: #008400 } /* Generic.Inserted */
+.codehilite .go { color: #717171 } /* Generic.Output */
+.codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.codehilite .gs { font-weight: bold } /* Generic.Strong */
+.codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.codehilite .gt { color: #0044DD } /* Generic.Traceback */
+.codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+.codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.codehilite .kt { color: #B00040 } /* Keyword.Type */
+.codehilite .m { color: #666666 } /* Literal.Number */
+.codehilite .s { color: #BA2121 } /* Literal.String */
+.codehilite .na { color: #687822 } /* Name.Attribute */
+.codehilite .nb { color: #008000 } /* Name.Builtin */
+.codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.codehilite .no { color: #880000 } /* Name.Constant */
+.codehilite .nd { color: #AA22FF } /* Name.Decorator */
+.codehilite .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.codehilite .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.codehilite .nf { color: #0000FF } /* Name.Function */
+.codehilite .nl { color: #767600 } /* Name.Label */
+.codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.codehilite .nv { color: #19177C } /* Name.Variable */
+.codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+.codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+.codehilite .mf { color: #666666 } /* Literal.Number.Float */
+.codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+.codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+.codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+.codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+.codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+.codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+.codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+.codehilite .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.codehilite .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.codehilite .sx { color: #008000 } /* Literal.String.Other */
+.codehilite .sr { color: #A45A77 } /* Literal.String.Regex */
+.codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+.codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+.codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+.codehilite .vc { color: #19177C } /* Name.Variable.Class */
+.codehilite .vg { color: #19177C } /* Name.Variable.Global */
+.codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+.codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+.codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+</style><h1 id="_1">目次</h1>
+<div class="toc">
+<ul>
+<li><a href="#_1">目次</a></li>
+<li><a href="#1">1.はじめに</a></li>
+<li><a href="#2">2.基本構想</a></li>
+<li><a href="#3">3.開発環境</a></li>
+<li><a href="#4">4.チュートリアル</a><ul>
+<li><a href="#4ahtml">4.a.本文のみのHTMLファイルを生成する</a><ul>
+<li><a href="#4a1">4.a.1.変換スクリプトのインストール</a></li>
+<li><a href="#4a2markdown">4.a.2.本文たるMarkdownファイルの作成</a></li>
+<li><a href="#4a3">4.a.3.変換処理の実行</a></li>
+</ul>
+</li>
+<li><a href="#4bhtml">4.b.文章デザインを適用したHTMLファイルを生成する</a><ul>
+<li><a href="#4b1">4.b.1.変換スクリプトのインストール</a></li>
+<li><a href="#4b2markdown">4.b.2.本文たるMarkdownファイルの作成</a></li>
+<li><a href="#4b3css">4.b.3.文章デザインたるCSSファイルの作成</a></li>
+<li><a href="#4b4">4.b.4.変換処理の実行</a></li>
+</ul>
+</li>
+<li><a href="#4chtml">4.c.画像を埋め込んだHTMLファイルを生成する</a><ul>
+<li><a href="#4c1">4.c.1.変換スクリプトのインストール</a></li>
+<li><a href="#4c2markdown">4.c.2.本文たるMarkdownファイルの作成</a></li>
+<li><a href="#4c3">4.c.3.画像ファイルの配置</a></li>
+<li><a href="#4c4">4.c.4.変換処理の実行</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#5">5.より高度な使い方</a><ul>
+<li><a href="#5a">5.a.インデント</a><ul>
+<li><a href="#5a1css">5.a.1.CSSファイルの記述</a></li>
+<li><a href="#5a2">5.a.2.本文へのインデントの記述</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_2">付録</a><ul>
+<li><a href="#_3">変換スクリプト</a><ul>
+<li><a href="#_4">スクリプト本文</a></li>
+<li><a href="#_5">スクリプト起動方法</a><ul>
+<li><a href="#_6">コマンドライン引数説明</a></li>
+</ul>
+</li>
+<li><a href="#_7">必要な外部ライブラリ</a></li>
+<li><a href="#_8">拡張機能カススタイズ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="1">1.はじめに</h1>
+<div class="admonition indent">
+<p>Document In HTML(DIH)は、<br />
+あらゆるドキュメントをHTML形式にて生成することを目的とする。</p>
+</div>
+<h1 id="2">2.基本構想</h1>
+<div class="admonition indent">
+<p>本項にて基本構想について説明する。</p>
+<p>生成するドキュメントはHTML形式であるが、生成元たるファイルは用途ごとに以下のようになる。</p>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>ファイル形式</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本文</td>
+<td>MarkDown(.mdファイル)</td>
+<td>生成する1つのHTMLファイルに対して1つのみ。</td>
+</tr>
+<tr>
+<td>文章デザイン</td>
+<td>CSS(.cssファイル)</td>
+<td>生成する1つのHTMLファイルに対して1つのみ。<br />または無し。</td>
+</tr>
+<tr>
+<td>画像</td>
+<td>PNG(.drawio.pngファイル)<br />SVG(.drawio.svgファイル)</td>
+<td>生成する1つのHTMLファイルに対して1つ以上。<br />または無し。</td>
+</tr>
+</tbody>
+</table>
+<p>本文はMarkDown形式で記述する(デザインや文章構造によってはHTMLタグを用いることもある)。<br />
+文章デザインはCSS形式で記述する。<br />
+画像の描画はPNG形式を用いるが、より高度な図を描画したい場合はSVG形式を用いることもある。</p>
+<p>これらのファイルを組み合わせて単一のHTMLファイルを生成する。<br />
+単一のHTMLファイルにするので、CSSファイルや画像ファイルはすべてHTMLファイルに埋め込む。<br />
+これにより、HTMLファイルのみでドキュメントを閲覧できるようになる。</p>
+<p>HTMLファイルの生成は専用の<a href="#furoku-convert-script">変換スクリプト</a>を用いて行う。<br />
+以下にHTMLファイルの生成過程を図解する。<br />
+<img alt="" src="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C%21--%20Do%20not%20edit%20this%20file%20with%20editors%20other%20than%20draw.io%20--%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20width%3D%22801px%22%20height%3D%22561px%22%20viewBox%3D%22-0.5%20-0.5%20801%20561%22%20content%3D%22%26lt%3Bmxfile%20host%3D%26quot%3BElectron%26quot%3B%20modified%3D%26quot%3B2024-05-25T07%3A49%3A51.188Z%26quot%3B%20agent%3D%26quot%3BMozilla/5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit/537.36%20%28KHTML%2C%20like%20Gecko%29%20draw.io/24.4.8%20Chrome/124.0.6367.207%20Electron/30.0.6%20Safari/537.36%26quot%3B%20etag%3D%26quot%3B0dM8Xk9_HldzUPX2tHKY%26quot%3B%20version%3D%26quot%3B24.4.8%26quot%3B%20type%3D%26quot%3Bdevice%26quot%3B%26gt%3B%26%2310%3B%20%20%26lt%3Bdiagram%20name%3D%26quot%3B%E3%83%9A%E3%83%BC%E3%82%B81%26quot%3B%20id%3D%26quot%3BQk8Wzw-2mn7jn9UQ94n8%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%26lt%3BmxGraphModel%20dx%3D%26quot%3B934%26quot%3B%20dy%3D%26quot%3B601%26quot%3B%20grid%3D%26quot%3B1%26quot%3B%20gridSize%3D%26quot%3B10%26quot%3B%20guides%3D%26quot%3B1%26quot%3B%20tooltips%3D%26quot%3B1%26quot%3B%20connect%3D%26quot%3B1%26quot%3B%20arrows%3D%26quot%3B1%26quot%3B%20fold%3D%26quot%3B1%26quot%3B%20page%3D%26quot%3B1%26quot%3B%20pageScale%3D%26quot%3B1%26quot%3B%20pageWidth%3D%26quot%3B2339%26quot%3B%20pageHeight%3D%26quot%3B3300%26quot%3B%20math%3D%26quot%3B0%26quot%3B%20shadow%3D%26quot%3B0%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%26lt%3Broot%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3B0%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3B0%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-21%26quot%3B%20value%3D%26quot%3B%26quot%3B%20style%3D%26quot%3BfillColor%3Dnone%3BstrokeColor%3D%235A6C86%3Bdashed%3D1%3BverticalAlign%3Dtop%3BfontStyle%3D0%3BfontColor%3D%235A6C86%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3B1%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B40%26quot%3B%20y%3D%26quot%3B40%26quot%3B%20width%3D%26quot%3B800%26quot%3B%20height%3D%26quot%3B560%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-1%26quot%3B%20value%3D%26quot%3BGroup%26quot%3B%20parent%3D%26quot%3B0%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%20value%3D%26quot%3BFront%26quot%3B%20parent%3D%26quot%3B0%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-15%26quot%3B%20style%3D%26quot%3BedgeStyle%3DorthogonalEdgeStyle%3Brounded%3D0%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BstrokeWidth%3D2%3BflowAnimation%3D1%3B%26quot%3B%20edge%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%20source%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-26%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20relative%3D%26quot%3B1%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B160%26quot%3B%20y%3D%26quot%3B280%26quot%3B%20as%3D%26quot%3BsourcePoint%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B399.9999999999998%26quot%3B%20y%3D%26quot%3B280%26quot%3B%20as%3D%26quot%3BtargetPoint%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3B/mxGeometry%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-22%26quot%3B%20value%3D%26quot%3B%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%26quot%3B%20style%3D%26quot%3BedgeLabel%3Bhtml%3D1%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3Bresizable%3D0%3Bpoints%3D%5B%5D%3BfontSize%3D16%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20connectable%3D%26quot%3B0%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-15%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B0.35%26quot%3B%20y%3D%26quot%3B-2%26quot%3B%20relative%3D%26quot%3B1%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B18%26quot%3B%20as%3D%26quot%3Boffset%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3B/mxGeometry%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-5%26quot%3B%20value%3D%26quot%3B%E6%9C%AC%E6%96%87%26amp%3B%23xa%3BMarkDown%26quot%3B%20style%3D%26quot%3Bshape%3Dimage%3Baspect%3Dfixed%3Bimage%3Ddata%3Aimage/svg%2Bxml%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9tYXJrZG93bjwvdGl0bGU%2BPHJlY3QgeD0iMi41IiB5PSI3Ljk1NSIgd2lkdGg9IjI3IiBoZWlnaHQ9IjE2LjA5MSIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6Izc1NTgzOCIvPjxwb2x5Z29uIHBvaW50cz0iNS45MDkgMjAuNjM2IDUuOTA5IDExLjM2NCA4LjYzNiAxMS4zNjQgMTEuMzY0IDE0Ljc3MyAxNC4wOTEgMTEuMzY0IDE2LjgxOCAxMS4zNjQgMTYuODE4IDIwLjYzNiAxNC4wOTEgMjAuNjM2IDE0LjA5MSAxNS4zMTggMTEuMzY0IDE4LjcyNyA4LjYzNiAxNS4zMTggOC42MzYgMjAuNjM2IDUuOTA5IDIwLjYzNiIgc3R5bGU9ImZpbGw6Izc1NTgzOCIvPjxwb2x5Z29uIHBvaW50cz0iMjIuOTU1IDIwLjYzNiAxOC44NjQgMTYuMTM2IDIxLjU5MSAxNi4xMzYgMjEuNTkxIDExLjM2NCAyNC4zMTggMTEuMzY0IDI0LjMxOCAxNi4xMzYgMjcuMDQ1IDE2LjEzNiAyMi45NTUgMjAuNjM2IiBzdHlsZT0iZmlsbDojNzU1ODM4Ii8%2BPC9zdmc%2B%3BfontSize%3D16%3BverticalAlign%3Dtop%3BspacingTop%3D-16%3BspacingBottom%3D0%3BlabelPosition%3Dcenter%3BverticalLabelPosition%3Dbottom%3Balign%3Dcenter%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B80%26quot%3B%20y%3D%26quot%3B80%26quot%3B%20width%3D%26quot%3B80%26quot%3B%20height%3D%26quot%3B80%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-17%26quot%3B%20style%3D%26quot%3BedgeStyle%3DorthogonalEdgeStyle%3Brounded%3D1%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BendArrow%3Doval%3BendFill%3D1%3BstrokeWidth%3D2%3BflowAnimation%3D1%3Bcurved%3D0%3B%26quot%3B%20edge%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%20source%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-5%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20relative%3D%26quot%3B1%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B280%26quot%3B%20y%3D%26quot%3B280%26quot%3B%20as%3D%26quot%3BtargetPoint%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BArray%20as%3D%26quot%3Bpoints%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B220%26quot%3B%20y%3D%26quot%3B120%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B220%26quot%3B%20y%3D%26quot%3B120%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3B/Array%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3B/mxGeometry%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-20%26quot%3B%20style%3D%26quot%3BedgeStyle%3DorthogonalEdgeStyle%3Brounded%3D0%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BstrokeWidth%3D2%3BflowAnimation%3D1%3B%26quot%3B%20edge%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%20target%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-35%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20relative%3D%26quot%3B1%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B479.9999999999998%26quot%3B%20y%3D%26quot%3B280%26quot%3B%20as%3D%26quot%3BsourcePoint%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B719.9999999999998%26quot%3B%20y%3D%26quot%3B280.0588235294117%26quot%3B%20as%3D%26quot%3BtargetPoint%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3B/mxGeometry%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-23%26quot%3B%20value%3D%26quot%3B%E5%87%BA%E5%8A%9B%26quot%3B%20style%3D%26quot%3BedgeLabel%3Bhtml%3D1%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3Bresizable%3D0%3Bpoints%3D%5B%5D%3BfontSize%3D16%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20connectable%3D%26quot%3B0%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-20%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B-0.35%26quot%3B%20y%3D%26quot%3B-1%26quot%3B%20relative%3D%26quot%3B1%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B-18%26quot%3B%20as%3D%26quot%3Boffset%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3B/mxGeometry%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-24%26quot%3B%20value%3D%26quot%3B%26amp%3Blt%3Bfont%20style%3D%26amp%3Bquot%3Bfont-size%3A%2016px%3B%26amp%3Bquot%3B%26amp%3Bgt%3B%E5%A4%89%E6%8F%9B%26amp%3Blt%3B/font%26amp%3Bgt%3B%26quot%3B%20style%3D%26quot%3BedgeStyle%3DorthogonalEdgeStyle%3Brounded%3D1%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BstrokeWidth%3D2%3BflowAnimation%3D1%3BentryX%3D0.875%3BentryY%3D0%3BentryDx%3D0%3BentryDy%3D0%3BentryPerimeter%3D0%3Bcurved%3D0%3BlabelBackgroundColor%3Dnone%3B%26quot%3B%20edge%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20y%3D%26quot%3B10%26quot%3B%20relative%3D%26quot%3B1%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B410%26quot%3B%20y%3D%26quot%3B240%26quot%3B%20as%3D%26quot%3BsourcePoint%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B469.9999999999998%26quot%3B%20y%3D%26quot%3B240%26quot%3B%20as%3D%26quot%3BtargetPoint%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BArray%20as%3D%26quot%3Bpoints%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B410%26quot%3B%20y%3D%26quot%3B200%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3B/Array%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20as%3D%26quot%3Boffset%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3B/mxGeometry%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-18%26quot%3B%20style%3D%26quot%3BedgeStyle%3DorthogonalEdgeStyle%3Brounded%3D1%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BendArrow%3Dnone%3BendFill%3D0%3BstrokeWidth%3D2%3BflowAnimation%3D1%3Bcurved%3D0%3B%26quot%3B%20edge%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%20source%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-27%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20relative%3D%26quot%3B1%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B280%26quot%3B%20y%3D%26quot%3B280%26quot%3B%20as%3D%26quot%3BtargetPoint%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B200%26quot%3B%20y%3D%26quot%3B440%26quot%3B%20as%3D%26quot%3BsourcePoint%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BArray%20as%3D%26quot%3Bpoints%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3BmxPoint%20x%3D%26quot%3B280%26quot%3B%20y%3D%26quot%3B460%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%20%20%26lt%3B/Array%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3B/mxGeometry%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-26%26quot%3B%20value%3D%26quot%3B%E6%96%87%E7%AB%A0%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%26amp%3B%23xa%3BCSS%26quot%3B%20style%3D%26quot%3Bshape%3Dimage%3Baspect%3Dfixed%3Bimage%3Ddata%3Aimage/svg%2Bxml%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9jc3M8L3RpdGxlPjxwb2x5Z29uIHBvaW50cz0iNS45MDIgMjcuMjAxIDMuNjU2IDIgMjguMzQ0IDIgMjYuMDk1IDI3LjE5NyAxNS45ODUgMzAgNS45MDIgMjcuMjAxIiBzdHlsZT0iZmlsbDojMTU3MmI2Ii8%2BPHBvbHlnb24gcG9pbnRzPSIxNiAyNy44NTggMjQuMTcgMjUuNTkzIDI2LjA5MiA0LjA2MSAxNiA0LjA2MSAxNiAyNy44NTgiIHN0eWxlPSJmaWxsOiMzM2E5ZGMiLz48cG9seWdvbiBwb2ludHM9IjE2IDEzLjE5MSAyMC4wOSAxMy4xOTEgMjAuMzcyIDEwLjAyNiAxNiAxMC4wMjYgMTYgNi45MzUgMTYuMDExIDYuOTM1IDIzLjc1IDYuOTM1IDIzLjY3NiA3Ljc2NCAyMi45MTcgMTYuMjgyIDE2IDE2LjI4MiAxNiAxMy4xOTEiIHN0eWxlPSJmaWxsOiNmZmYiLz48cG9seWdvbiBwb2ludHM9IjE2LjAxOSAyMS4yMTggMTYuMDA1IDIxLjIyMiAxMi41NjMgMjAuMjkyIDEyLjM0MyAxNy44MjcgMTAuNjcgMTcuODI3IDkuMjQgMTcuODI3IDkuNjczIDIyLjY4IDE2LjAwNCAyNC40MzggMTYuMDE5IDI0LjQzNCAxNi4wMTkgMjEuMjE4IiBzdHlsZT0iZmlsbDojZWJlYmViIi8%2BPHBvbHlnb24gcG9pbnRzPSIxOS44MjcgMTYuMTUxIDE5LjQ1NSAyMC4yOSAxNi4wMDggMjEuMjIgMTYuMDA4IDI0LjQzNiAyMi4zNDQgMjIuNjggMjIuMzkxIDIyLjE1OCAyMi45MjggMTYuMTUxIDE5LjgyNyAxNi4xNTEiIHN0eWxlPSJmaWxsOiNmZmYiLz48cG9seWdvbiBwb2ludHM9IjE2LjAxMSA2LjkzNSAxNi4wMTEgOC44NTUgMTYuMDExIDEwLjAxOCAxNi4wMTEgMTAuMDI2IDguNTU1IDEwLjAyNiA4LjU1NSAxMC4wMjYgOC41NDUgMTAuMDI2IDguNDgzIDkuMzMxIDguMzQyIDcuNzY0IDguMjY4IDYuOTM1IDE2LjAxMSA2LjkzNSIgc3R5bGU9ImZpbGw6I2ViZWJlYiIvPjxwb2x5Z29uIHBvaW50cz0iMTYgMTMuMTkxIDE2IDE1LjExMSAxNiAxNi4yNzQgMTYgMTYuMjgyIDEyLjYxMSAxNi4yODIgMTIuNjExIDE2LjI4MiAxMi42MDEgMTYuMjgyIDEyLjUzOSAxNS41ODcgMTIuMzk5IDE0LjAyIDEyLjMyNSAxMy4xOTEgMTYgMTMuMTkxIiBzdHlsZT0iZmlsbDojZWJlYmViIi8%2BPC9zdmc%2B%3BfontSize%3D16%3BlabelPosition%3Dcenter%3BverticalLabelPosition%3Dbottom%3Balign%3Dcenter%3BverticalAlign%3Dtop%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B80%26quot%3B%20y%3D%26quot%3B240%26quot%3B%20width%3D%26quot%3B80%26quot%3B%20height%3D%26quot%3B80%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-33%26quot%3B%20value%3D%26quot%3B%E7%94%BB%E5%83%8F%26amp%3B%23xa%3BPNG%E3%83%BBSVG%26quot%3B%20style%3D%26quot%3Bgroup%3BfontSize%3D16%3BlabelPosition%3Dcenter%3BverticalLabelPosition%3Dbottom%3Balign%3Dcenter%3BverticalAlign%3Dtop%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20connectable%3D%26quot%3B0%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B60%26quot%3B%20y%3D%26quot%3B400%26quot%3B%20width%3D%26quot%3B120%26quot%3B%20height%3D%26quot%3B120%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-27%26quot%3B%20value%3D%26quot%3B%26quot%3B%20style%3D%26quot%3Bshape%3Dimage%3Baspect%3Dfixed%3Bimage%3Ddata%3Aimage/svg%2Bxml%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9kcmF3aW88L3RpdGxlPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjEuMTIiIHN0eWxlPSJmaWxsOiNmMDg3MDUiLz48cGF0aCBkPSJNMTYuODYxLDkuMTY4bDMuMDItMy4xODdMMzAsMTYuMDk0VjI4Ljg4QTEuMTE5LDEuMTE5LDAsMCwxLDI4Ljg4LDMwSDExLjMxNkw1LjkzMSwyNC41OTNaIiBzdHlsZT0iZmlsbDojZGY2YzBjO2ZpbGwtcnVsZTpldmVub2RkIi8%2BPHBhdGggZD0iTTI1LjI0LDE3Ljk2SDIxLjk0NmwtMy4wNzEtNS4zMmguMmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWNi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLTEuMTJIMTIuOTJBMS4xMTksMS4xMTksMCwwLDAsMTEuOCw2Ljc2djQuNzZhMS4xMTksMS4xMTksMCwwLDAsMS4xMiwxLjEyaC4yMDVsLTMuMDcxLDUuMzJINi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLDEuMTJ2NC43NmExLjExOSwxLjExOSwwLDAsMCwxLjEyLDEuMTJoNi4xNmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWMTkuMDhhMS4xMTksMS4xMTksMCwwLDAtMS4xMi0xLjEyaC0uOTI3bDMuMDcyLTUuMzJoMS44N2wzLjA3MSw1LjMySDE5LjA4YTEuMTE5LDEuMTE5LDAsMCwwLTEuMTIsMS4xMnY0Ljc2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTIsMS4xMmg2LjE2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTItMS4xMlYxOS4wOEExLjExOSwxLjExOSwwLDAsMCwyNS4yNCwxNy45NloiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4%3D%3Bopacity%3D50%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-33%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B40%26quot%3B%20width%3D%26quot%3B80%26quot%3B%20height%3D%26quot%3B80%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-29%26quot%3B%20value%3D%26quot%3B%26quot%3B%20style%3D%26quot%3Bshape%3Dimage%3Baspect%3Dfixed%3Bimage%3Ddata%3Aimage/svg%2Bxml%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9kcmF3aW88L3RpdGxlPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjEuMTIiIHN0eWxlPSJmaWxsOiNmMDg3MDUiLz48cGF0aCBkPSJNMTYuODYxLDkuMTY4bDMuMDItMy4xODdMMzAsMTYuMDk0VjI4Ljg4QTEuMTE5LDEuMTE5LDAsMCwxLDI4Ljg4LDMwSDExLjMxNkw1LjkzMSwyNC41OTNaIiBzdHlsZT0iZmlsbDojZGY2YzBjO2ZpbGwtcnVsZTpldmVub2RkIi8%2BPHBhdGggZD0iTTI1LjI0LDE3Ljk2SDIxLjk0NmwtMy4wNzEtNS4zMmguMmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWNi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLTEuMTJIMTIuOTJBMS4xMTksMS4xMTksMCwwLDAsMTEuOCw2Ljc2djQuNzZhMS4xMTksMS4xMTksMCwwLDAsMS4xMiwxLjEyaC4yMDVsLTMuMDcxLDUuMzJINi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLDEuMTJ2NC43NmExLjExOSwxLjExOSwwLDAsMCwxLjEyLDEuMTJoNi4xNmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWMTkuMDhhMS4xMTksMS4xMTksMCwwLDAtMS4xMi0xLjEyaC0uOTI3bDMuMDcyLTUuMzJoMS44N2wzLjA3MSw1LjMySDE5LjA4YTEuMTE5LDEuMTE5LDAsMCwwLTEuMTIsMS4xMnY0Ljc2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTIsMS4xMmg2LjE2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTItMS4xMlYxOS4wOEExLjExOSwxLjExOSwwLDAsMCwyNS4yNCwxNy45NloiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4%3D%3Bopacity%3D50%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-33%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B30%26quot%3B%20y%3D%26quot%3B10%26quot%3B%20width%3D%26quot%3B80%26quot%3B%20height%3D%26quot%3B80%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-30%26quot%3B%20value%3D%26quot%3B%26quot%3B%20style%3D%26quot%3Bshape%3Dimage%3Baspect%3Dfixed%3Bimage%3Ddata%3Aimage/svg%2Bxml%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9kcmF3aW88L3RpdGxlPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjEuMTIiIHN0eWxlPSJmaWxsOiNmMDg3MDUiLz48cGF0aCBkPSJNMTYuODYxLDkuMTY4bDMuMDItMy4xODdMMzAsMTYuMDk0VjI4Ljg4QTEuMTE5LDEuMTE5LDAsMCwxLDI4Ljg4LDMwSDExLjMxNkw1LjkzMSwyNC41OTNaIiBzdHlsZT0iZmlsbDojZGY2YzBjO2ZpbGwtcnVsZTpldmVub2RkIi8%2BPHBhdGggZD0iTTI1LjI0LDE3Ljk2SDIxLjk0NmwtMy4wNzEtNS4zMmguMmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWNi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLTEuMTJIMTIuOTJBMS4xMTksMS4xMTksMCwwLDAsMTEuOCw2Ljc2djQuNzZhMS4xMTksMS4xMTksMCwwLDAsMS4xMiwxLjEyaC4yMDVsLTMuMDcxLDUuMzJINi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLDEuMTJ2NC43NmExLjExOSwxLjExOSwwLDAsMCwxLjEyLDEuMTJoNi4xNmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWMTkuMDhhMS4xMTksMS4xMTksMCwwLDAtMS4xMi0xLjEyaC0uOTI3bDMuMDcyLTUuMzJoMS44N2wzLjA3MSw1LjMySDE5LjA4YTEuMTE5LDEuMTE5LDAsMCwwLTEuMTIsMS4xMnY0Ljc2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTIsMS4xMmg2LjE2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTItMS4xMlYxOS4wOEExLjExOSwxLjExOSwwLDAsMCwyNS4yNCwxNy45NloiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4%3D%3Bopacity%3D50%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-33%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B20%26quot%3B%20y%3D%26quot%3B20%26quot%3B%20width%3D%26quot%3B80%26quot%3B%20height%3D%26quot%3B80%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-31%26quot%3B%20value%3D%26quot%3B%26quot%3B%20style%3D%26quot%3Bshape%3Dimage%3Baspect%3Dfixed%3Bimage%3Ddata%3Aimage/svg%2Bxml%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9kcmF3aW88L3RpdGxlPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjEuMTIiIHN0eWxlPSJmaWxsOiNmMDg3MDUiLz48cGF0aCBkPSJNMTYuODYxLDkuMTY4bDMuMDItMy4xODdMMzAsMTYuMDk0VjI4Ljg4QTEuMTE5LDEuMTE5LDAsMCwxLDI4Ljg4LDMwSDExLjMxNkw1LjkzMSwyNC41OTNaIiBzdHlsZT0iZmlsbDojZGY2YzBjO2ZpbGwtcnVsZTpldmVub2RkIi8%2BPHBhdGggZD0iTTI1LjI0LDE3Ljk2SDIxLjk0NmwtMy4wNzEtNS4zMmguMmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWNi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLTEuMTJIMTIuOTJBMS4xMTksMS4xMTksMCwwLDAsMTEuOCw2Ljc2djQuNzZhMS4xMTksMS4xMTksMCwwLDAsMS4xMiwxLjEyaC4yMDVsLTMuMDcxLDUuMzJINi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLDEuMTJ2NC43NmExLjExOSwxLjExOSwwLDAsMCwxLjEyLDEuMTJoNi4xNmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWMTkuMDhhMS4xMTksMS4xMTksMCwwLDAtMS4xMi0xLjEyaC0uOTI3bDMuMDcyLTUuMzJoMS44N2wzLjA3MSw1LjMySDE5LjA4YTEuMTE5LDEuMTE5LDAsMCwwLTEuMTIsMS4xMnY0Ljc2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTIsMS4xMmg2LjE2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTItMS4xMlYxOS4wOEExLjExOSwxLjExOSwwLDAsMCwyNS4yNCwxNy45NloiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4%3D%3Bopacity%3D50%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-33%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B10%26quot%3B%20y%3D%26quot%3B30%26quot%3B%20width%3D%26quot%3B80%26quot%3B%20height%3D%26quot%3B80%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-32%26quot%3B%20value%3D%26quot%3B%26quot%3B%20style%3D%26quot%3Bshape%3Dimage%3Baspect%3Dfixed%3Bimage%3Ddata%3Aimage/svg%2Bxml%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9kcmF3aW88L3RpdGxlPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjEuMTIiIHN0eWxlPSJmaWxsOiNmMDg3MDUiLz48cGF0aCBkPSJNMTYuODYxLDkuMTY4bDMuMDItMy4xODdMMzAsMTYuMDk0VjI4Ljg4QTEuMTE5LDEuMTE5LDAsMCwxLDI4Ljg4LDMwSDExLjMxNkw1LjkzMSwyNC41OTNaIiBzdHlsZT0iZmlsbDojZGY2YzBjO2ZpbGwtcnVsZTpldmVub2RkIi8%2BPHBhdGggZD0iTTI1LjI0LDE3Ljk2SDIxLjk0NmwtMy4wNzEtNS4zMmguMmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWNi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLTEuMTJIMTIuOTJBMS4xMTksMS4xMTksMCwwLDAsMTEuOCw2Ljc2djQuNzZhMS4xMTksMS4xMTksMCwwLDAsMS4xMiwxLjEyaC4yMDVsLTMuMDcxLDUuMzJINi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLDEuMTJ2NC43NmExLjExOSwxLjExOSwwLDAsMCwxLjEyLDEuMTJoNi4xNmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWMTkuMDhhMS4xMTksMS4xMTksMCwwLDAtMS4xMi0xLjEyaC0uOTI3bDMuMDcyLTUuMzJoMS44N2wzLjA3MSw1LjMySDE5LjA4YTEuMTE5LDEuMTE5LDAsMCwwLTEuMTIsMS4xMnY0Ljc2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTIsMS4xMmg2LjE2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTItMS4xMlYxOS4wOEExLjExOSwxLjExOSwwLDAsMCwyNS4yNCwxNy45NloiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4%3D%3BfontSize%3D16%3BlabelPosition%3Dcenter%3BverticalLabelPosition%3Dbottom%3Balign%3Dcenter%3BverticalAlign%3Dtop%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-33%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20y%3D%26quot%3B40%26quot%3B%20width%3D%26quot%3B80%26quot%3B%20height%3D%26quot%3B80%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-34%26quot%3B%20value%3D%26quot%3B%E5%A4%89%E6%8F%9B%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%26quot%3B%20style%3D%26quot%3Bshape%3Dimage%3Baspect%3Dfixed%3Bimage%3Ddata%3Aimage/svg%2Bxml%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYSIgeDE9Ii0xMzMuMjY4IiB5MT0iLTIwMi45MSIgeDI9Ii0xMzMuMTk4IiB5Mj0iLTIwMi44NCIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgyNTI0My4wNjEgMzg1MTkuMTcpIHNjYWxlKDE4OS4zOCAxODkuODEpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI%2BPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMzg3ZWI4Ii8%2BPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMzY2OTk0Ii8%2BPC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSItMTMzLjU3NSIgeTE9Ii0yMDMuMjAzIiB4Mj0iLTEzMy40OTUiIHkyPSItMjAzLjEzMyIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgyNTMwOS4wNjEgMzg1ODMuNDIpIHNjYWxlKDE4OS4zOCAxODkuODEpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI%2BPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmZlMDUyIi8%2BPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZjMzMxIi8%2BPC9saW5lYXJHcmFkaWVudD48L2RlZnM%2BPHRpdGxlPmZpbGVfdHlwZV9weXRob248L3RpdGxlPjxwYXRoIGQ9Ik0xNS44ODUsMi4xYy03LjEsMC02LjY1MSwzLjA3LTYuNjUxLDMuMDdWOC4zNmg2Ljc1MnYxSDYuNTQ1UzIsOC44LDIsMTYuMDA1czQuMDEzLDYuOTEyLDQuMDEzLDYuOTEySDguMzNWMTkuNTU2cy0uMTMtNC4wMTMsMy45LTQuMDEzaDYuNzYyczMuNzcyLjA2LDMuNzcyLTMuNjUyVjUuOHMuNTcyLTMuNzEyLTYuODQyLTMuNzEyaDBaTTEyLjE1Myw0LjIzN2ExLjIxNCwxLjIxNCwwLDEsMS0xLjE4MywxLjI0NHYtLjAyYTEuMjE0LDEuMjE0LDAsMCwxLDEuMjE0LTEuMjE0aDBaIiBzdHlsZT0iZmlsbDp1cmwoI2EpIi8%2BPHBhdGggZD0iTTE2LjA4NSwyOS45MWM3LjEsMCw2LjY1MS0zLjA4LDYuNjUxLTMuMDhWMjMuNjVIMTUuOTg1di0xaDkuNDdTMzAsMjMuMTU4LDMwLDE1Ljk5NXMtNC4wMTMtNi45MTItNC4wMTMtNi45MTJIMjMuNjRWMTIuNHMuMTMsNC4wMTMtMy45LDQuMDEzSDEyLjk3NVM5LjIsMTYuMzU2LDkuMiwyMC4wNjhWMjYuMnMtLjU3MiwzLjcxMiw2Ljg0MiwzLjcxMmguMDRabTMuNzMyLTIuMTQ3QTEuMjE0LDEuMjE0LDAsMSwxLDIxLDI2LjUxOXYuMDNhMS4yMTQsMS4yMTQsMCwwLDEtMS4yMTQsMS4yMTRoLjAzWiIgc3R5bGU9ImZpbGw6dXJsKCNiKSIvPjwvc3ZnPg%3D%3D%3BfontSize%3D16%3BlabelPosition%3Dcenter%3BverticalLabelPosition%3Dbottom%3Balign%3Dcenter%3BverticalAlign%3Dtop%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B400%26quot%3B%20y%3D%26quot%3B240%26quot%3B%20width%3D%26quot%3B80%26quot%3B%20height%3D%26quot%3B80%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3BmxCell%20id%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-35%26quot%3B%20value%3D%26quot%3B%E7%94%9F%E6%88%90%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%26amp%3B%23xa%3BHTML%26quot%3B%20style%3D%26quot%3Bshape%3Dimage%3Baspect%3Dfixed%3Bimage%3Ddata%3Aimage/svg%2Bxml%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9odG1sPC90aXRsZT48cG9seWdvbiBwb2ludHM9IjUuOTAyIDI3LjIwMSAzLjY1NSAyIDI4LjM0NSAyIDI2LjA5NSAyNy4xOTcgMTUuOTg1IDMwIDUuOTAyIDI3LjIwMSIgc3R5bGU9ImZpbGw6I2U0NGYyNiIvPjxwb2x5Z29uIHBvaW50cz0iMTYgMjcuODU4IDI0LjE3IDI1LjU5MyAyNi4wOTIgNC4wNjEgMTYgNC4wNjEgMTYgMjcuODU4IiBzdHlsZT0iZmlsbDojZjE2NjJhIi8%2BPHBvbHlnb24gcG9pbnRzPSIxNiAxMy40MDcgMTEuOTEgMTMuNDA3IDExLjYyOCAxMC4yNDIgMTYgMTAuMjQyIDE2IDcuMTUxIDE1Ljk4OSA3LjE1MSA4LjI1IDcuMTUxIDguMzI0IDcuOTgxIDkuMDgzIDE2LjQ5OCAxNiAxNi40OTggMTYgMTMuNDA3IiBzdHlsZT0iZmlsbDojZWJlYmViIi8%2BPHBvbHlnb24gcG9pbnRzPSIxNiAyMS40MzQgMTUuOTg2IDIxLjQzOCAxMi41NDQgMjAuNTA5IDEyLjMyNCAxOC4wNDQgMTAuNjUxIDE4LjA0NCA5LjIyMSAxOC4wNDQgOS42NTQgMjIuODk2IDE1Ljk4NiAyNC42NTQgMTYgMjQuNjUgMTYgMjEuNDM0IiBzdHlsZT0iZmlsbDojZWJlYmViIi8%2BPHBvbHlnb24gcG9pbnRzPSIxNS45ODkgMTMuNDA3IDE1Ljk4OSAxNi40OTggMTkuNzk1IDE2LjQ5OCAxOS40MzcgMjAuNTA3IDE1Ljk4OSAyMS40MzcgMTUuOTg5IDI0LjY1MyAyMi4zMjYgMjIuODk2IDIyLjM3MiAyMi4zNzQgMjMuMDk4IDE0LjIzNyAyMy4xNzQgMTMuNDA3IDIyLjM0MSAxMy40MDcgMTUuOTg5IDEzLjQwNyIgc3R5bGU9ImZpbGw6I2ZmZiIvPjxwb2x5Z29uIHBvaW50cz0iMTUuOTg5IDcuMTUxIDE1Ljk4OSA5LjA3MSAxNS45ODkgMTAuMjM1IDE1Ljk4OSAxMC4yNDIgMjMuNDQ1IDEwLjI0MiAyMy40NDUgMTAuMjQyIDIzLjQ1NSAxMC4yNDIgMjMuNTE3IDkuNTQ4IDIzLjY1OCA3Ljk4MSAyMy43MzIgNy4xNTEgMTUuOTg5IDcuMTUxIiBzdHlsZT0iZmlsbDojZmZmIi8%2BPC9zdmc%2B%3BlabelPosition%3Dcenter%3BverticalLabelPosition%3Dbottom%3Balign%3Dcenter%3BverticalAlign%3Dtop%3BfontSize%3D16%3B%26quot%3B%20vertex%3D%26quot%3B1%26quot%3B%20parent%3D%26quot%3BgR6rad1v4qDqYdZW6Ml4-2%26quot%3B%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%20%20%26lt%3BmxGeometry%20x%3D%26quot%3B720%26quot%3B%20y%3D%26quot%3B240%26quot%3B%20width%3D%26quot%3B80%26quot%3B%20height%3D%26quot%3B80%26quot%3B%20as%3D%26quot%3Bgeometry%26quot%3B%20/%26gt%3B%26%2310%3B%20%20%20%20%20%20%20%20%26lt%3B/mxCell%26gt%3B%26%2310%3B%20%20%20%20%20%20%26lt%3B/root%26gt%3B%26%2310%3B%20%20%20%20%26lt%3B/mxGraphModel%26gt%3B%26%2310%3B%20%20%26lt%3B/diagram%26gt%3B%26%2310%3B%26lt%3B/mxfile%26gt%3B%26%2310%3B%22%3E%3Cdefs%3E%3Cstyle%3E%40keyframes%20ge-flow-animation-ceTtwrdN9wxU7mWVIT3S%20%7B%26%23xa%3B%20%20to%20%7B%26%23xa%3B%20%20%20%20stroke-dashoffset%3A%200%3B%26%23xa%3B%20%20%7D%26%23xa%3B%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cg%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22800%22%20height%3D%22560%22%20fill%3D%22none%22%20stroke%3D%22%235a6c86%22%20stroke-dasharray%3D%223%203%22%20pointer-events%3D%22all%22/%3E%3C/g%3E%3Cg%3E%3Cpath%20d%3D%22M%20120%20240.06%20L%20240%20240.06%20L%20351.76%20240%22%20fill%3D%22none%22%20stroke%3D%22rgb%280%2C%200%2C%200%29%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20pointer-events%3D%22stroke%22%20stroke-dasharray%3D%228%22%20style%3D%22animation%3A%20500ms%20linear%200s%20infinite%20normal%20none%20running%20ge-flow-animation-ceTtwrdN9wxU7mWVIT3S%3B%20stroke-dashoffset%3A%2016%3B%22/%3E%3Cpath%20d%3D%22M%20357.76%20240%20L%20349.77%20244.01%20L%20351.76%20240%20L%20349.76%20236.01%20Z%22%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20stroke%3D%22rgb%280%2C%200%2C%200%29%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20pointer-events%3D%22all%22/%3E%3C/g%3E%3Cg%3E%3Cg%20transform%3D%22translate%28-0.5%20-0.5%29%22%3E%3Cswitch%3E%3CforeignObject%20pointer-events%3D%22none%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20requiredFeatures%3D%22http%3A//www.w3.org/TR/SVG11/feature%23Extensibility%22%20style%3D%22overflow%3A%20visible%3B%20text-align%3A%20left%3B%22%3E%3Cdiv%20xmlns%3D%22http%3A//www.w3.org/1999/xhtml%22%20style%3D%22display%3A%20flex%3B%20align-items%3A%20unsafe%20center%3B%20justify-content%3A%20unsafe%20center%3B%20width%3A%201px%3B%20height%3A%201px%3B%20padding-top%3A%20243px%3B%20margin-left%3A%20300px%3B%22%3E%3Cdiv%20data-drawio-colors%3D%22color%3A%20rgb%280%2C%200%2C%200%29%3B%20background-color%3A%20rgb%28255%2C%20255%2C%20255%29%3B%20%22%20style%3D%22box-sizing%3A%20border-box%3B%20font-size%3A%200px%3B%20text-align%3A%20center%3B%22%3E%3Cdiv%20style%3D%22display%3A%20inline-block%3B%20font-size%3A%2016px%3B%20font-family%3A%20Helvetica%3B%20color%3A%20rgb%280%2C%200%2C%200%29%3B%20line-height%3A%201.2%3B%20pointer-events%3A%20all%3B%20background-color%3A%20rgb%28255%2C%20255%2C%20255%29%3B%20white-space%3A%20nowrap%3B%22%3E%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%3C/div%3E%3C/div%3E%3C/div%3E%3C/foreignObject%3E%3Ctext%20x%3D%22300%22%20y%3D%22248%22%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20font-family%3D%22Helvetica%22%20font-size%3D%2216px%22%20text-anchor%3D%22middle%22%3E%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%3C/text%3E%3C/switch%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cimage%20x%3D%2239.5%22%20y%3D%2239.5%22%20width%3D%2280%22%20height%3D%2280%22%20xlink%3Ahref%3D%22data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9tYXJrZG93bjwvdGl0bGU%2BPHJlY3QgeD0iMi41IiB5PSI3Ljk1NSIgd2lkdGg9IjI3IiBoZWlnaHQ9IjE2LjA5MSIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6Izc1NTgzOCIvPjxwb2x5Z29uIHBvaW50cz0iNS45MDkgMjAuNjM2IDUuOTA5IDExLjM2NCA4LjYzNiAxMS4zNjQgMTEuMzY0IDE0Ljc3MyAxNC4wOTEgMTEuMzY0IDE2LjgxOCAxMS4zNjQgMTYuODE4IDIwLjYzNiAxNC4wOTEgMjAuNjM2IDE0LjA5MSAxNS4zMTggMTEuMzY0IDE4LjcyNyA4LjYzNiAxNS4zMTggOC42MzYgMjAuNjM2IDUuOTA5IDIwLjYzNiIgc3R5bGU9ImZpbGw6Izc1NTgzOCIvPjxwb2x5Z29uIHBvaW50cz0iMjIuOTU1IDIwLjYzNiAxOC44NjQgMTYuMTM2IDIxLjU5MSAxNi4xMzYgMjEuNTkxIDExLjM2NCAyNC4zMTggMTEuMzY0IDI0LjMxOCAxNi4xMzYgMjcuMDQ1IDE2LjEzNiAyMi45NTUgMjAuNjM2IiBzdHlsZT0iZmlsbDojNzU1ODM4Ii8%2BPC9zdmc%2B%22/%3E%3C/g%3E%3Cg%3E%3Cg%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20font-family%3D%22Helvetica%22%20text-anchor%3D%22middle%22%20font-size%3D%2216px%22%3E%3Ctext%20x%3D%2279.5%22%20y%3D%22125.5%22%3E%E6%9C%AC%E6%96%87%3C/text%3E%3Ctext%20x%3D%2279.5%22%20y%3D%22144.5%22%3EMarkDown%3C/text%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath%20d%3D%22M%20120%2080.06%20L%20170%2080.06%20Q%20180%2080.06%20190%2080.06%20L%20230%2080.06%20Q%20240%2080.06%20240%2090.06%20L%20240%20237%22%20fill%3D%22none%22%20stroke%3D%22rgb%280%2C%200%2C%200%29%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20pointer-events%3D%22stroke%22%20stroke-dasharray%3D%228%22%20style%3D%22animation%3A%20500ms%20linear%200s%20infinite%20normal%20none%20running%20ge-flow-animation-ceTtwrdN9wxU7mWVIT3S%3B%20stroke-dashoffset%3A%2016%3B%22/%3E%3Cellipse%20cx%3D%22240%22%20cy%3D%22240%22%20rx%3D%223%22%20ry%3D%223%22%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20stroke%3D%22rgb%280%2C%200%2C%200%29%22%20stroke-width%3D%222%22%20pointer-events%3D%22all%22/%3E%3C/g%3E%3Cg%3E%3Cpath%20d%3D%22M%20440%20240%20L%20560.47%20240.53%20L%20671.76%20240.09%22%20fill%3D%22none%22%20stroke%3D%22rgb%280%2C%200%2C%200%29%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20pointer-events%3D%22stroke%22%20stroke-dasharray%3D%228%22%20style%3D%22animation%3A%20500ms%20linear%200s%20infinite%20normal%20none%20running%20ge-flow-animation-ceTtwrdN9wxU7mWVIT3S%3B%20stroke-dashoffset%3A%2016%3B%22/%3E%3Cpath%20d%3D%22M%20677.76%20240.07%20L%20669.78%20244.1%20L%20671.76%20240.09%20L%20669.75%20236.1%20Z%22%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20stroke%3D%22rgb%280%2C%200%2C%200%29%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20pointer-events%3D%22all%22/%3E%3C/g%3E%3Cg%3E%3Cg%20transform%3D%22translate%28-0.5%20-0.5%29%22%3E%3Cswitch%3E%3CforeignObject%20pointer-events%3D%22none%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20requiredFeatures%3D%22http%3A//www.w3.org/TR/SVG11/feature%23Extensibility%22%20style%3D%22overflow%3A%20visible%3B%20text-align%3A%20left%3B%22%3E%3Cdiv%20xmlns%3D%22http%3A//www.w3.org/1999/xhtml%22%20style%3D%22display%3A%20flex%3B%20align-items%3A%20unsafe%20center%3B%20justify-content%3A%20unsafe%20center%3B%20width%3A%201px%3B%20height%3A%201px%3B%20padding-top%3A%20242px%3B%20margin-left%3A%20500px%3B%22%3E%3Cdiv%20data-drawio-colors%3D%22color%3A%20rgb%280%2C%200%2C%200%29%3B%20background-color%3A%20rgb%28255%2C%20255%2C%20255%29%3B%20%22%20style%3D%22box-sizing%3A%20border-box%3B%20font-size%3A%200px%3B%20text-align%3A%20center%3B%22%3E%3Cdiv%20style%3D%22display%3A%20inline-block%3B%20font-size%3A%2016px%3B%20font-family%3A%20Helvetica%3B%20color%3A%20rgb%280%2C%200%2C%200%29%3B%20line-height%3A%201.2%3B%20pointer-events%3A%20all%3B%20background-color%3A%20rgb%28255%2C%20255%2C%20255%29%3B%20white-space%3A%20nowrap%3B%22%3E%E5%87%BA%E5%8A%9B%3C/div%3E%3C/div%3E%3C/div%3E%3C/foreignObject%3E%3Ctext%20x%3D%22500%22%20y%3D%22247%22%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20font-family%3D%22Helvetica%22%20font-size%3D%2216px%22%20text-anchor%3D%22middle%22%3E%E5%87%BA%E5%8A%9B%3C/text%3E%3C/switch%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath%20d%3D%22M%20370%20200%20L%20370%20170.06%20Q%20370%20160.06%20380%20160.06%20L%20420%20160.06%20Q%20430%20160.06%20430%20170.06%20L%20430%20191.76%22%20fill%3D%22none%22%20stroke%3D%22rgb%280%2C%200%2C%200%29%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20pointer-events%3D%22stroke%22%20stroke-dasharray%3D%228%22%20style%3D%22animation%3A%20500ms%20linear%200s%20infinite%20normal%20none%20running%20ge-flow-animation-ceTtwrdN9wxU7mWVIT3S%3B%20stroke-dashoffset%3A%2016%3B%22/%3E%3Cpath%20d%3D%22M%20430%20197.76%20L%20426%20189.76%20L%20430%20191.76%20L%20434%20189.76%20Z%22%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20stroke%3D%22rgb%280%2C%200%2C%200%29%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20pointer-events%3D%22all%22/%3E%3C/g%3E%3Cg%3E%3Cg%20transform%3D%22translate%28-0.5%20-0.5%29%22%3E%3Cswitch%3E%3CforeignObject%20pointer-events%3D%22none%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20requiredFeatures%3D%22http%3A//www.w3.org/TR/SVG11/feature%23Extensibility%22%20style%3D%22overflow%3A%20visible%3B%20text-align%3A%20left%3B%22%3E%3Cdiv%20xmlns%3D%22http%3A//www.w3.org/1999/xhtml%22%20style%3D%22display%3A%20flex%3B%20align-items%3A%20unsafe%20center%3B%20justify-content%3A%20unsafe%20center%3B%20width%3A%201px%3B%20height%3A%201px%3B%20padding-top%3A%20150px%3B%20margin-left%3A%20399px%3B%22%3E%3Cdiv%20data-drawio-colors%3D%22color%3A%20rgb%280%2C%200%2C%200%29%3B%20%22%20style%3D%22box-sizing%3A%20border-box%3B%20font-size%3A%200px%3B%20text-align%3A%20center%3B%22%3E%3Cdiv%20style%3D%22display%3A%20inline-block%3B%20font-size%3A%2011px%3B%20font-family%3A%20Helvetica%3B%20color%3A%20rgb%280%2C%200%2C%200%29%3B%20line-height%3A%201.2%3B%20pointer-events%3A%20all%3B%20white-space%3A%20nowrap%3B%22%3E%3Cfont%20style%3D%22font-size%3A%2016px%3B%22%3E%E5%A4%89%E6%8F%9B%3C/font%3E%3C/div%3E%3C/div%3E%3C/div%3E%3C/foreignObject%3E%3Ctext%20x%3D%22399%22%20y%3D%22153%22%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20font-family%3D%22Helvetica%22%20font-size%3D%2211px%22%20text-anchor%3D%22middle%22%3E%E5%A4%89%E6%8F%9B%3C/text%3E%3C/switch%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath%20d%3D%22M%20140%20420.06%20L%20230%20420.06%20Q%20240%20420.06%20240%20410.06%20L%20240%20240%22%20fill%3D%22none%22%20stroke%3D%22rgb%280%2C%200%2C%200%29%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20pointer-events%3D%22stroke%22%20stroke-dasharray%3D%228%22%20style%3D%22animation%3A%20500ms%20linear%200s%20infinite%20normal%20none%20running%20ge-flow-animation-ceTtwrdN9wxU7mWVIT3S%3B%20stroke-dashoffset%3A%2016%3B%22/%3E%3C/g%3E%3Cg%3E%3Cimage%20x%3D%2239.5%22%20y%3D%22199.5%22%20width%3D%2280%22%20height%3D%2280%22%20xlink%3Ahref%3D%22data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9jc3M8L3RpdGxlPjxwb2x5Z29uIHBvaW50cz0iNS45MDIgMjcuMjAxIDMuNjU2IDIgMjguMzQ0IDIgMjYuMDk1IDI3LjE5NyAxNS45ODUgMzAgNS45MDIgMjcuMjAxIiBzdHlsZT0iZmlsbDojMTU3MmI2Ii8%2BPHBvbHlnb24gcG9pbnRzPSIxNiAyNy44NTggMjQuMTcgMjUuNTkzIDI2LjA5MiA0LjA2MSAxNiA0LjA2MSAxNiAyNy44NTgiIHN0eWxlPSJmaWxsOiMzM2E5ZGMiLz48cG9seWdvbiBwb2ludHM9IjE2IDEzLjE5MSAyMC4wOSAxMy4xOTEgMjAuMzcyIDEwLjAyNiAxNiAxMC4wMjYgMTYgNi45MzUgMTYuMDExIDYuOTM1IDIzLjc1IDYuOTM1IDIzLjY3NiA3Ljc2NCAyMi45MTcgMTYuMjgyIDE2IDE2LjI4MiAxNiAxMy4xOTEiIHN0eWxlPSJmaWxsOiNmZmYiLz48cG9seWdvbiBwb2ludHM9IjE2LjAxOSAyMS4yMTggMTYuMDA1IDIxLjIyMiAxMi41NjMgMjAuMjkyIDEyLjM0MyAxNy44MjcgMTAuNjcgMTcuODI3IDkuMjQgMTcuODI3IDkuNjczIDIyLjY4IDE2LjAwNCAyNC40MzggMTYuMDE5IDI0LjQzNCAxNi4wMTkgMjEuMjE4IiBzdHlsZT0iZmlsbDojZWJlYmViIi8%2BPHBvbHlnb24gcG9pbnRzPSIxOS44MjcgMTYuMTUxIDE5LjQ1NSAyMC4yOSAxNi4wMDggMjEuMjIgMTYuMDA4IDI0LjQzNiAyMi4zNDQgMjIuNjggMjIuMzkxIDIyLjE1OCAyMi45MjggMTYuMTUxIDE5LjgyNyAxNi4xNTEiIHN0eWxlPSJmaWxsOiNmZmYiLz48cG9seWdvbiBwb2ludHM9IjE2LjAxMSA2LjkzNSAxNi4wMTEgOC44NTUgMTYuMDExIDEwLjAxOCAxNi4wMTEgMTAuMDI2IDguNTU1IDEwLjAyNiA4LjU1NSAxMC4wMjYgOC41NDUgMTAuMDI2IDguNDgzIDkuMzMxIDguMzQyIDcuNzY0IDguMjY4IDYuOTM1IDE2LjAxMSA2LjkzNSIgc3R5bGU9ImZpbGw6I2ViZWJlYiIvPjxwb2x5Z29uIHBvaW50cz0iMTYgMTMuMTkxIDE2IDE1LjExMSAxNiAxNi4yNzQgMTYgMTYuMjgyIDEyLjYxMSAxNi4yODIgMTIuNjExIDE2LjI4MiAxMi42MDEgMTYuMjgyIDEyLjUzOSAxNS41ODcgMTIuMzk5IDE0LjAyIDEyLjMyNSAxMy4xOTEgMTYgMTMuMTkxIiBzdHlsZT0iZmlsbDojZWJlYmViIi8%2BPC9zdmc%2B%22/%3E%3C/g%3E%3Cg%3E%3Cg%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20font-family%3D%22Helvetica%22%20text-anchor%3D%22middle%22%20font-size%3D%2216px%22%3E%3Ctext%20x%3D%2279.5%22%20y%3D%22301.5%22%3E%E6%96%87%E7%AB%A0%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%3C/text%3E%3Ctext%20x%3D%2279.5%22%20y%3D%22320.5%22%3ECSS%3C/text%3E%3C/g%3E%3C/g%3E%3Cg/%3E%3Cg%3E%3Cg%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20font-family%3D%22Helvetica%22%20text-anchor%3D%22middle%22%20font-size%3D%2216px%22%3E%3Ctext%20x%3D%2279.5%22%20y%3D%22501.5%22%3E%E7%94%BB%E5%83%8F%3C/text%3E%3Ctext%20x%3D%2279.5%22%20y%3D%22520.5%22%3EPNG%E3%83%BBSVG%3C/text%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cimage%20x%3D%2259.5%22%20y%3D%22359.5%22%20width%3D%2280%22%20height%3D%2280%22%20xlink%3Ahref%3D%22data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9kcmF3aW88L3RpdGxlPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjEuMTIiIHN0eWxlPSJmaWxsOiNmMDg3MDUiLz48cGF0aCBkPSJNMTYuODYxLDkuMTY4bDMuMDItMy4xODdMMzAsMTYuMDk0VjI4Ljg4QTEuMTE5LDEuMTE5LDAsMCwxLDI4Ljg4LDMwSDExLjMxNkw1LjkzMSwyNC41OTNaIiBzdHlsZT0iZmlsbDojZGY2YzBjO2ZpbGwtcnVsZTpldmVub2RkIi8%2BPHBhdGggZD0iTTI1LjI0LDE3Ljk2SDIxLjk0NmwtMy4wNzEtNS4zMmguMmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWNi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLTEuMTJIMTIuOTJBMS4xMTksMS4xMTksMCwwLDAsMTEuOCw2Ljc2djQuNzZhMS4xMTksMS4xMTksMCwwLDAsMS4xMiwxLjEyaC4yMDVsLTMuMDcxLDUuMzJINi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLDEuMTJ2NC43NmExLjExOSwxLjExOSwwLDAsMCwxLjEyLDEuMTJoNi4xNmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWMTkuMDhhMS4xMTksMS4xMTksMCwwLDAtMS4xMi0xLjEyaC0uOTI3bDMuMDcyLTUuMzJoMS44N2wzLjA3MSw1LjMySDE5LjA4YTEuMTE5LDEuMTE5LDAsMCwwLTEuMTIsMS4xMnY0Ljc2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTIsMS4xMmg2LjE2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTItMS4xMlYxOS4wOEExLjExOSwxLjExOSwwLDAsMCwyNS4yNCwxNy45NloiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4%3D%22%20opacity%3D%220.5%22/%3E%3C/g%3E%3Cg%3E%3Cimage%20x%3D%2249.5%22%20y%3D%22369.5%22%20width%3D%2280%22%20height%3D%2280%22%20xlink%3Ahref%3D%22data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9kcmF3aW88L3RpdGxlPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjEuMTIiIHN0eWxlPSJmaWxsOiNmMDg3MDUiLz48cGF0aCBkPSJNMTYuODYxLDkuMTY4bDMuMDItMy4xODdMMzAsMTYuMDk0VjI4Ljg4QTEuMTE5LDEuMTE5LDAsMCwxLDI4Ljg4LDMwSDExLjMxNkw1LjkzMSwyNC41OTNaIiBzdHlsZT0iZmlsbDojZGY2YzBjO2ZpbGwtcnVsZTpldmVub2RkIi8%2BPHBhdGggZD0iTTI1LjI0LDE3Ljk2SDIxLjk0NmwtMy4wNzEtNS4zMmguMmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWNi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLTEuMTJIMTIuOTJBMS4xMTksMS4xMTksMCwwLDAsMTEuOCw2Ljc2djQuNzZhMS4xMTksMS4xMTksMCwwLDAsMS4xMiwxLjEyaC4yMDVsLTMuMDcxLDUuMzJINi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLDEuMTJ2NC43NmExLjExOSwxLjExOSwwLDAsMCwxLjEyLDEuMTJoNi4xNmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWMTkuMDhhMS4xMTksMS4xMTksMCwwLDAtMS4xMi0xLjEyaC0uOTI3bDMuMDcyLTUuMzJoMS44N2wzLjA3MSw1LjMySDE5LjA4YTEuMTE5LDEuMTE5LDAsMCwwLTEuMTIsMS4xMnY0Ljc2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTIsMS4xMmg2LjE2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTItMS4xMlYxOS4wOEExLjExOSwxLjExOSwwLDAsMCwyNS4yNCwxNy45NloiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4%3D%22%20opacity%3D%220.5%22/%3E%3C/g%3E%3Cg%3E%3Cimage%20x%3D%2239.5%22%20y%3D%22379.5%22%20width%3D%2280%22%20height%3D%2280%22%20xlink%3Ahref%3D%22data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9kcmF3aW88L3RpdGxlPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjEuMTIiIHN0eWxlPSJmaWxsOiNmMDg3MDUiLz48cGF0aCBkPSJNMTYuODYxLDkuMTY4bDMuMDItMy4xODdMMzAsMTYuMDk0VjI4Ljg4QTEuMTE5LDEuMTE5LDAsMCwxLDI4Ljg4LDMwSDExLjMxNkw1LjkzMSwyNC41OTNaIiBzdHlsZT0iZmlsbDojZGY2YzBjO2ZpbGwtcnVsZTpldmVub2RkIi8%2BPHBhdGggZD0iTTI1LjI0LDE3Ljk2SDIxLjk0NmwtMy4wNzEtNS4zMmguMmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWNi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLTEuMTJIMTIuOTJBMS4xMTksMS4xMTksMCwwLDAsMTEuOCw2Ljc2djQuNzZhMS4xMTksMS4xMTksMCwwLDAsMS4xMiwxLjEyaC4yMDVsLTMuMDcxLDUuMzJINi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLDEuMTJ2NC43NmExLjExOSwxLjExOSwwLDAsMCwxLjEyLDEuMTJoNi4xNmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWMTkuMDhhMS4xMTksMS4xMTksMCwwLDAtMS4xMi0xLjEyaC0uOTI3bDMuMDcyLTUuMzJoMS44N2wzLjA3MSw1LjMySDE5LjA4YTEuMTE5LDEuMTE5LDAsMCwwLTEuMTIsMS4xMnY0Ljc2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTIsMS4xMmg2LjE2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTItMS4xMlYxOS4wOEExLjExOSwxLjExOSwwLDAsMCwyNS4yNCwxNy45NloiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4%3D%22%20opacity%3D%220.5%22/%3E%3C/g%3E%3Cg%3E%3Cimage%20x%3D%2229.5%22%20y%3D%22389.5%22%20width%3D%2280%22%20height%3D%2280%22%20xlink%3Ahref%3D%22data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9kcmF3aW88L3RpdGxlPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjEuMTIiIHN0eWxlPSJmaWxsOiNmMDg3MDUiLz48cGF0aCBkPSJNMTYuODYxLDkuMTY4bDMuMDItMy4xODdMMzAsMTYuMDk0VjI4Ljg4QTEuMTE5LDEuMTE5LDAsMCwxLDI4Ljg4LDMwSDExLjMxNkw1LjkzMSwyNC41OTNaIiBzdHlsZT0iZmlsbDojZGY2YzBjO2ZpbGwtcnVsZTpldmVub2RkIi8%2BPHBhdGggZD0iTTI1LjI0LDE3Ljk2SDIxLjk0NmwtMy4wNzEtNS4zMmguMmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWNi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLTEuMTJIMTIuOTJBMS4xMTksMS4xMTksMCwwLDAsMTEuOCw2Ljc2djQuNzZhMS4xMTksMS4xMTksMCwwLDAsMS4xMiwxLjEyaC4yMDVsLTMuMDcxLDUuMzJINi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLDEuMTJ2NC43NmExLjExOSwxLjExOSwwLDAsMCwxLjEyLDEuMTJoNi4xNmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWMTkuMDhhMS4xMTksMS4xMTksMCwwLDAtMS4xMi0xLjEyaC0uOTI3bDMuMDcyLTUuMzJoMS44N2wzLjA3MSw1LjMySDE5LjA4YTEuMTE5LDEuMTE5LDAsMCwwLTEuMTIsMS4xMnY0Ljc2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTIsMS4xMmg2LjE2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTItMS4xMlYxOS4wOEExLjExOSwxLjExOSwwLDAsMCwyNS4yNCwxNy45NloiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4%3D%22%20opacity%3D%220.5%22/%3E%3C/g%3E%3Cg%3E%3Cimage%20x%3D%2219.5%22%20y%3D%22399.5%22%20width%3D%2280%22%20height%3D%2280%22%20xlink%3Ahref%3D%22data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9kcmF3aW88L3RpdGxlPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjEuMTIiIHN0eWxlPSJmaWxsOiNmMDg3MDUiLz48cGF0aCBkPSJNMTYuODYxLDkuMTY4bDMuMDItMy4xODdMMzAsMTYuMDk0VjI4Ljg4QTEuMTE5LDEuMTE5LDAsMCwxLDI4Ljg4LDMwSDExLjMxNkw1LjkzMSwyNC41OTNaIiBzdHlsZT0iZmlsbDojZGY2YzBjO2ZpbGwtcnVsZTpldmVub2RkIi8%2BPHBhdGggZD0iTTI1LjI0LDE3Ljk2SDIxLjk0NmwtMy4wNzEtNS4zMmguMmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWNi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLTEuMTJIMTIuOTJBMS4xMTksMS4xMTksMCwwLDAsMTEuOCw2Ljc2djQuNzZhMS4xMTksMS4xMTksMCwwLDAsMS4xMiwxLjEyaC4yMDVsLTMuMDcxLDUuMzJINi43NmExLjExOSwxLjExOSwwLDAsMC0xLjEyLDEuMTJ2NC43NmExLjExOSwxLjExOSwwLDAsMCwxLjEyLDEuMTJoNi4xNmExLjExOSwxLjExOSwwLDAsMCwxLjEyLTEuMTJWMTkuMDhhMS4xMTksMS4xMTksMCwwLDAtMS4xMi0xLjEyaC0uOTI3bDMuMDcyLTUuMzJoMS44N2wzLjA3MSw1LjMySDE5LjA4YTEuMTE5LDEuMTE5LDAsMCwwLTEuMTIsMS4xMnY0Ljc2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTIsMS4xMmg2LjE2YTEuMTE5LDEuMTE5LDAsMCwwLDEuMTItMS4xMlYxOS4wOEExLjExOSwxLjExOSwwLDAsMCwyNS4yNCwxNy45NloiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4%3D%22/%3E%3C/g%3E%3Cg%3E%3Cimage%20x%3D%22359.5%22%20y%3D%22199.5%22%20width%3D%2280%22%20height%3D%2280%22%20xlink%3Ahref%3D%22data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYSIgeDE9Ii0xMzMuMjY4IiB5MT0iLTIwMi45MSIgeDI9Ii0xMzMuMTk4IiB5Mj0iLTIwMi44NCIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgyNTI0My4wNjEgMzg1MTkuMTcpIHNjYWxlKDE4OS4zOCAxODkuODEpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI%2BPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMzg3ZWI4Ii8%2BPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMzY2OTk0Ii8%2BPC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSItMTMzLjU3NSIgeTE9Ii0yMDMuMjAzIiB4Mj0iLTEzMy40OTUiIHkyPSItMjAzLjEzMyIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgyNTMwOS4wNjEgMzg1ODMuNDIpIHNjYWxlKDE4OS4zOCAxODkuODEpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI%2BPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmZlMDUyIi8%2BPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZjMzMxIi8%2BPC9saW5lYXJHcmFkaWVudD48L2RlZnM%2BPHRpdGxlPmZpbGVfdHlwZV9weXRob248L3RpdGxlPjxwYXRoIGQ9Ik0xNS44ODUsMi4xYy03LjEsMC02LjY1MSwzLjA3LTYuNjUxLDMuMDdWOC4zNmg2Ljc1MnYxSDYuNTQ1UzIsOC44LDIsMTYuMDA1czQuMDEzLDYuOTEyLDQuMDEzLDYuOTEySDguMzNWMTkuNTU2cy0uMTMtNC4wMTMsMy45LTQuMDEzaDYuNzYyczMuNzcyLjA2LDMuNzcyLTMuNjUyVjUuOHMuNTcyLTMuNzEyLTYuODQyLTMuNzEyaDBaTTEyLjE1Myw0LjIzN2ExLjIxNCwxLjIxNCwwLDEsMS0xLjE4MywxLjI0NHYtLjAyYTEuMjE0LDEuMjE0LDAsMCwxLDEuMjE0LTEuMjE0aDBaIiBzdHlsZT0iZmlsbDp1cmwoI2EpIi8%2BPHBhdGggZD0iTTE2LjA4NSwyOS45MWM3LjEsMCw2LjY1MS0zLjA4LDYuNjUxLTMuMDhWMjMuNjVIMTUuOTg1di0xaDkuNDdTMzAsMjMuMTU4LDMwLDE1Ljk5NXMtNC4wMTMtNi45MTItNC4wMTMtNi45MTJIMjMuNjRWMTIuNHMuMTMsNC4wMTMtMy45LDQuMDEzSDEyLjk3NVM5LjIsMTYuMzU2LDkuMiwyMC4wNjhWMjYuMnMtLjU3MiwzLjcxMiw2Ljg0MiwzLjcxMmguMDRabTMuNzMyLTIuMTQ3QTEuMjE0LDEuMjE0LDAsMSwxLDIxLDI2LjUxOXYuMDNhMS4yMTQsMS4yMTQsMCwwLDEtMS4yMTQsMS4yMTRoLjAzWiIgc3R5bGU9ImZpbGw6dXJsKCNiKSIvPjwvc3ZnPg%3D%3D%22/%3E%3C/g%3E%3Cg%3E%3Cg%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20font-family%3D%22Helvetica%22%20text-anchor%3D%22middle%22%20font-size%3D%2216px%22%3E%3Ctext%20x%3D%22399.5%22%20y%3D%22301.5%22%3E%E5%A4%89%E6%8F%9B%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%3C/text%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cimage%20x%3D%22679.5%22%20y%3D%22199.5%22%20width%3D%2280%22%20height%3D%2280%22%20xlink%3Ahref%3D%22data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI%2BPHRpdGxlPmZpbGVfdHlwZV9odG1sPC90aXRsZT48cG9seWdvbiBwb2ludHM9IjUuOTAyIDI3LjIwMSAzLjY1NSAyIDI4LjM0NSAyIDI2LjA5NSAyNy4xOTcgMTUuOTg1IDMwIDUuOTAyIDI3LjIwMSIgc3R5bGU9ImZpbGw6I2U0NGYyNiIvPjxwb2x5Z29uIHBvaW50cz0iMTYgMjcuODU4IDI0LjE3IDI1LjU5MyAyNi4wOTIgNC4wNjEgMTYgNC4wNjEgMTYgMjcuODU4IiBzdHlsZT0iZmlsbDojZjE2NjJhIi8%2BPHBvbHlnb24gcG9pbnRzPSIxNiAxMy40MDcgMTEuOTEgMTMuNDA3IDExLjYyOCAxMC4yNDIgMTYgMTAuMjQyIDE2IDcuMTUxIDE1Ljk4OSA3LjE1MSA4LjI1IDcuMTUxIDguMzI0IDcuOTgxIDkuMDgzIDE2LjQ5OCAxNiAxNi40OTggMTYgMTMuNDA3IiBzdHlsZT0iZmlsbDojZWJlYmViIi8%2BPHBvbHlnb24gcG9pbnRzPSIxNiAyMS40MzQgMTUuOTg2IDIxLjQzOCAxMi41NDQgMjAuNTA5IDEyLjMyNCAxOC4wNDQgMTAuNjUxIDE4LjA0NCA5LjIyMSAxOC4wNDQgOS42NTQgMjIuODk2IDE1Ljk4NiAyNC42NTQgMTYgMjQuNjUgMTYgMjEuNDM0IiBzdHlsZT0iZmlsbDojZWJlYmViIi8%2BPHBvbHlnb24gcG9pbnRzPSIxNS45ODkgMTMuNDA3IDE1Ljk4OSAxNi40OTggMTkuNzk1IDE2LjQ5OCAxOS40MzcgMjAuNTA3IDE1Ljk4OSAyMS40MzcgMTUuOTg5IDI0LjY1MyAyMi4zMjYgMjIuODk2IDIyLjM3MiAyMi4zNzQgMjMuMDk4IDE0LjIzNyAyMy4xNzQgMTMuNDA3IDIyLjM0MSAxMy40MDcgMTUuOTg5IDEzLjQwNyIgc3R5bGU9ImZpbGw6I2ZmZiIvPjxwb2x5Z29uIHBvaW50cz0iMTUuOTg5IDcuMTUxIDE1Ljk4OSA5LjA3MSAxNS45ODkgMTAuMjM1IDE1Ljk4OSAxMC4yNDIgMjMuNDQ1IDEwLjI0MiAyMy40NDUgMTAuMjQyIDIzLjQ1NSAxMC4yNDIgMjMuNTE3IDkuNTQ4IDIzLjY1OCA3Ljk4MSAyMy43MzIgNy4xNTEgMTUuOTg5IDcuMTUxIiBzdHlsZT0iZmlsbDojZmZmIi8%2BPC9zdmc%2B%22/%3E%3C/g%3E%3Cg%3E%3Cg%20fill%3D%22rgb%280%2C%200%2C%200%29%22%20font-family%3D%22Helvetica%22%20text-anchor%3D%22middle%22%20font-size%3D%2216px%22%3E%3Ctext%20x%3D%22719.5%22%20y%3D%22301.5%22%3E%E7%94%9F%E6%88%90%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%3C/text%3E%3Ctext%20x%3D%22719.5%22%20y%3D%22320.5%22%3EHTML%3C/text%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cswitch%3E%3Cg%20requiredFeatures%3D%22http%3A//www.w3.org/TR/SVG11/feature%23Extensibility%22/%3E%3Ca%20transform%3D%22translate%280%2C-5%29%22%20xlink%3Ahref%3D%22https%3A//www.drawio.com/doc/faq/svg-export-text-problems%22%20target%3D%22_blank%22%3E%3Ctext%20text-anchor%3D%22middle%22%20font-size%3D%2210px%22%20x%3D%2250%25%22%20y%3D%22100%25%22%3EText%20is%20not%20SVG%20-%20cannot%20display%3C/text%3E%3C/a%3E%3C/switch%3E%3C/svg%3E" /><br />
+図: img.2.img-1</p>
+</div>
+<h1 id="3">3.開発環境</h1>
+<div class="admonition indent">
+<p>本項にて開発環境について説明する。</p>
+<p><strong>Python3</strong> がインストールされていることが前提となる。<br />
+それ以外は特に指定をしない。</p>
+<p>推奨する開発環境は以下の通りである。</p>
+<ul>
+<li><strong>OS:</strong><ul>
+<li>Windows 10 または Windows 11</li>
+</ul>
+</li>
+<li><strong>仮想化プラットフォーム:</strong><ul>
+<li>WSL2</li>
+</ul>
+</li>
+<li><strong>Pythonを実行する仮想化プラットフォーム上のOS:</strong><ul>
+<li>任意のLinuxディストリビューション</li>
+</ul>
+</li>
+<li><strong>Python:</strong><ul>
+<li>3.9 以上</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="4">4.チュートリアル</h1>
+<div class="admonition indent">
+<p>本項にてチュートリアルを示す。</p>
+<h2 id="4ahtml">4.a.本文のみのHTMLファイルを生成する</h2>
+<div class="admonition indent">
+<p>本文のみのHTMLファイルを生成するチュートリアルである。</p>
+<h3 id="4a1">4.a.1.変換スクリプトのインストール</h3>
+<div class="admonition indent">
+<p><a href="#furoku-convert-script-this">md2html.py</a>を任意の作業ディレクトリに配置する。<br />
+<a href="#furoku-convert-script-require-lib">必要な外部ライブラリ</a>をインストールする。</p>
+</div>
+<h3 id="4a2markdown">4.a.2.本文たるMarkdownファイルの作成</h3>
+<div class="admonition indent">
+<p>以下のMarkdownファイルを作成する。</p>
+<p><code>example.md</code></p>
+<div class="codehilite"><pre><span></span><code># チュートリアル
+これはチュートリアルです。
+</code></pre></div>
+
+</div>
+<h3 id="4a3">4.a.3.変換処理の実行</h3>
+<div class="admonition indent">
+<p>スクリプトを用いてHTMLファイルを生成する。</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>md2html.py<span class="w"> </span>--src-md-path<span class="w"> </span>example.md<span class="w"> </span>--dist-html-path<span class="w"> </span>example.html
+</code></pre></div>
+
+<p>これにて<strong>example.html</strong>が生成される。</p>
+</div>
+</div>
+<h2 id="4bhtml">4.b.文章デザインを適用したHTMLファイルを生成する</h2>
+<div class="admonition indent">
+<p>文章デザインを適用したHTMLファイルを生成するチュートリアルである。</p>
+<h3 id="4b1">4.b.1.変換スクリプトのインストール</h3>
+<div class="admonition indent">
+<p><a href="#furoku-convert-script-this">md2html.py</a>を任意の作業ディレクトリに配置する。<br />
+<a href="#furoku-convert-script-require-lib">必要な外部ライブラリ</a>をインストールする。</p>
+</div>
+<h3 id="4b2markdown">4.b.2.本文たるMarkdownファイルの作成</h3>
+<div class="admonition indent">
+<p>以下のMarkdownファイルを作成する。</p>
+<p><code>example.md</code></p>
+<div class="codehilite"><pre><span></span><code># チュートリアル
+これはチュートリアルです。
+</code></pre></div>
+
+</div>
+<h3 id="4b3css">4.b.3.文章デザインたるCSSファイルの作成</h3>
+<div class="admonition indent">
+<p>以下のCSSファイルを作成する。</p>
+<p><code>example.css</code></p>
+<div class="codehilite"><pre><span></span><code><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#64cadc</span><span class="n">ff</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+<h3 id="4b4">4.b.4.変換処理の実行</h3>
+<div class="admonition indent">
+<p>スクリプトを用いてHTMLファイルを生成する。</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>md2html.py<span class="w"> </span>--src-md-path<span class="w"> </span>example.md<span class="w"> </span>--src-css-path<span class="w"> </span>example.css<span class="w"> </span>--dist-html-path<span class="w"> </span>example.html
+</code></pre></div>
+
+<p>これにて文章デザインを適用が適用された<strong>example.html</strong>が生成される。<br />
+また、CSSファイルのデータがHTMLファイルに埋め込まれている。</p>
+</div>
+</div>
+<h2 id="4chtml">4.c.画像を埋め込んだHTMLファイルを生成する</h2>
+<div class="admonition indent">
+<p>画像を埋め込んだHTMLファイルを生成するチュートリアルである。</p>
+<h3 id="4c1">4.c.1.変換スクリプトのインストール</h3>
+<div class="admonition indent">
+<p><a href="#furoku-convert-script-this">md2html.py</a>を任意の作業ディレクトリに配置する。<br />
+<a href="#furoku-convert-script-require-lib">必要な外部ライブラリ</a>をインストールする。</p>
+</div>
+<h3 id="4c2markdown">4.c.2.本文たるMarkdownファイルの作成</h3>
+<div class="admonition indent">
+<p>以下のMarkdownファイルを作成する。</p>
+<p><code>example.md</code></p>
+<div class="codehilite"><pre><span></span><code># チュートリアル
+これはチュートリアルです。
+
+![画像](./images/img.1.img-1.drawio.png)
+</code></pre></div>
+
+<p>Markdownの記法にて画像を埋め込む記述する。</p>
+</div>
+<h3 id="4c3">4.c.3.画像ファイルの配置</h3>
+<div class="admonition indent">
+<p>以下の画像ファイルを配置する。<br /></p>
+<ul>
+<li><code>./images/img.1.img-1.drawio.png</code></li>
+</ul>
+<p>画像ファイルの作成・編集はdraw.ioのツールを用いて行うものとする。</p>
+</div>
+<h3 id="4c4">4.c.4.変換処理の実行</h3>
+<div class="admonition indent">
+<p>スクリプトを用いてHTMLファイルを生成する。</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>md2html.py<span class="w"> </span>--src-md-path<span class="w"> </span>example.md<span class="w"> </span>--dist-html-path<span class="w"> </span>example.html
+</code></pre></div>
+
+<p>これにて画像が埋め込まれた<strong>example.html</strong>が生成される。<br />
+また、画像ファイルのデータがHTMLファイルに埋め込まれている。</p>
+</div>
+</div>
+</div>
+<h1 id="5">5.より高度な使い方</h1>
+<div class="admonition indent">
+<p>本項にてより高度な使い方について説明する。</p>
+<h2 id="5a">5.a.インデント</h2>
+<div class="admonition indent">
+<p>本文中にインデントを用いることができる。<br />
+インデントは<a href="https://python-markdown.github.io/extensions/admonition/">Python-MarkdwonのAdmonition拡張機能</a>を用いる。<br /></p>
+<h3 id="5a1css">5.a.1.CSSファイルの記述</h3>
+<div class="admonition indent">
+<p>インデントのスタイルを記述するためのCSSファイルに以下の記述をする。</p>
+<p><code>example.css</code></p>
+<div class="codehilite"><pre><span></span><code><span class="na">.indent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nl">padding-left:</span><span class="w"> </span><span class="err">20</span><span class="nf">px</span><span class="c1">;　/* これにより右に字下げ */</span>
+<span class="w">    </span><span class="nl">border-left:</span><span class="w"> </span><span class="err">1</span><span class="nf">px</span><span class="w"> </span><span class="no">solid</span><span class="w"> </span><span class="c1">#eeeeee;　/* 左側の線 */</span>
+<span class="err">}</span>
+</code></pre></div>
+
+</div>
+<h3 id="5a2">5.a.2.本文へのインデントの記述</h3>
+<div class="admonition indent">
+<p>本文中でインデントを用いる際は以下のように記述する。</p>
+<p><code>example.md</code></p>
+<div class="codehilite"><pre><span></span><code># インデント
+!!! indent &quot;&quot;
+    ここにインデントする文章を記述する。
+
+この文章はインデントされない。
+</code></pre></div>
+
+<p>これにてインデントされた文章が生成される。</p>
+</div>
+</div>
+</div>
+<h1 id="_2">付録 <a id="furoku"></h1>
+<div class="admonition indent">
+<h2 id="_3">変換スクリプト <a id="furoku-convert-script"></h2>
+<div class="admonition indent">
+<h3 id="_4">スクリプト本文 <a id="furoku-convert-script-this"></h3>
+<div class="admonition indent">
+<p><code>md2html.py</code></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">markdown</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MainFlow</span><span class="p">():</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="n">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Markdown to HTML converter&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--src-md-path&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span><span class="w"> </span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the source Markdown file&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--src-css-path&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span><span class="w"> </span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the CSS file&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--dist-html-path&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span><span class="w"> </span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the destination HTML file&quot;</span><span class="p">)</span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">_argsCheck</span><span class="p">()</span>
+
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">_argsCheck</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_md_path</span><span class="p">:</span>
+<span class="w">            </span><span class="k">raise</span><span class="w"> </span><span class="n">ValueError</span><span class="p">(</span><span class="s1">&#39;The source Markdown file path is required &quot;--src-md-path&quot;&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dist_html_path</span><span class="p">:</span>
+<span class="w">            </span><span class="k">raise</span><span class="w"> </span><span class="n">ValueError</span><span class="p">(</span><span class="s1">&#39;The destination HTML file path is required &quot;--dist-html-path&quot;&#39;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">ReadMarkdown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_md_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">file</span><span class="p">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">Convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">markdown_content</span><span class="p">):</span>
+<span class="w">        </span><span class="c1"># 画像のインライン化関数</span>
+<span class="w">        </span><span class="k">def</span><span class="w"> </span><span class="nf">_inlineImage</span><span class="p">(</span><span class="n">src</span><span class="p">):</span>
+<span class="w">            </span><span class="n">image_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_md_path</span><span class="p">),</span><span class="w"> </span><span class="n">src</span><span class="p">)</span>
+<span class="w">            </span><span class="n">ext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">image_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="w">            </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;.svg&#39;</span><span class="p">:</span>
+<span class="w">                </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;image/svg+xml&#39;</span>
+<span class="w">            </span><span class="k">elif</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;.png&#39;</span><span class="p">:</span>
+<span class="w">                </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;image/png&#39;</span>
+<span class="w">            </span><span class="k">elif</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;.jpg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;.jpeg&#39;</span><span class="p">]:</span>
+<span class="w">                </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;image/jpeg&#39;</span>
+<span class="w">            </span><span class="k">elif</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;.gif&#39;</span><span class="p">:</span>
+<span class="w">                </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;image/gif&#39;</span>
+<span class="w">            </span><span class="k">else</span><span class="p">:</span>
+<span class="w">                </span><span class="k">raise</span><span class="w"> </span><span class="n">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unsupported image type: </span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="w">            </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">image_file</span><span class="p">:</span>
+<span class="w">                </span><span class="n">image_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">mime_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;image/svg+xml&#39;</span><span class="p">:</span>
+<span class="w">            </span><span class="c1"># SVG データを URL エンコードする</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;data:</span><span class="si">{</span><span class="n">mime_type</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">image_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="w">            </span><span class="k">else</span><span class="p">:</span>
+<span class="w">                </span><span class="c1"># 他の画像データを base64 エンコードする</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;data:</span><span class="si">{</span><span class="n">mime_type</span><span class="si">}</span><span class="s1">;base64,</span><span class="si">{</span><span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="w">        </span><span class="c1"># カスタム Markdown パーサー</span>
+<span class="w">        </span><span class="k">class</span><span class="w"> </span><span class="nc">InlineImageMarkdownRenderer</span><span class="p">(</span><span class="n">markdown</span><span class="o">.</span><span class="n">treeprocessors</span><span class="o">.</span><span class="n">Treeprocessor</span><span class="p">):</span>
+<span class="w">            </span><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">):</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">root</span><span class="o">.</span><span class="n">iter</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">):</span>
+<span class="w">                    </span><span class="n">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">inline_src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_inlineImage</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">element</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">inline_src</span><span class="p">)</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">root</span>
+
+<span class="w">        </span><span class="k">class</span><span class="w"> </span><span class="nc">InlineImageExtension</span><span class="p">(</span><span class="n">markdown</span><span class="o">.</span><span class="n">extensions</span><span class="o">.</span><span class="n">Extension</span><span class="p">):</span>
+<span class="w">            </span><span class="k">def</span><span class="w"> </span><span class="nf">extendMarkdown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">md</span><span class="p">):</span>
+<span class="w">                </span><span class="n">md</span><span class="o">.</span><span class="n">treeprocessors</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">InlineImageMarkdownRenderer</span><span class="p">(</span><span class="n">md</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;inline_image&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c1"># HTML 変換</span>
+<span class="w">        </span><span class="n">md</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">markdown</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span>
+<span class="w">            </span><span class="c1"># 拡張機能を有効化</span>
+<span class="w">            </span><span class="n">extensions</span><span class="o">=</span><span class="p">[</span>
+<span class="w">                </span><span class="n">InlineImageExtension</span><span class="p">(),</span><span class="w"> </span><span class="c1"># 画像のインライン化(自作拡張機能)</span>
+<span class="w">                </span><span class="s1">&#39;tables&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># テーブル</span>
+<span class="w">                </span><span class="s1">&#39;footnotes&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># 脚注</span>
+<span class="w">                </span><span class="s1">&#39;toc&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># 目次</span>
+<span class="w">                </span><span class="s1">&#39;admonition&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># 注意書き(&lt;div&gt;タグ)</span>
+<span class="w">                </span><span class="s1">&#39;codehilite&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># シンタックスハイライト</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">        </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">md</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">html_content</span>
+
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">AddCSS</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">html_content</span><span class="p">):</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_css_path</span><span class="p">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">html_content</span>
+<span class="w">        </span><span class="k">else</span><span class="p">:</span>
+<span class="w">            </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_css_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">f</span><span class="p">:</span>
+<span class="w">                </span><span class="n">css_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;&lt;style&gt;</span><span class="si">{</span><span class="n">css_data</span><span class="si">}</span><span class="s1">&lt;/style&gt;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">html_content</span>
+
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">WriteHTML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">html_content</span><span class="p">):</span>
+<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dist_html_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">file</span><span class="p">:</span>
+<span class="w">            </span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;HTML file generated: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dist_html_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="n">mian_flow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MainFlow</span><span class="p">()</span>
+<span class="w">    </span><span class="n">markdown_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">ReadMarkdown</span><span class="p">()</span>
+<span class="w">    </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">Convert</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">)</span>
+<span class="w">    </span><span class="n">html_content_with_css</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">AddCSS</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
+<span class="w">    </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">WriteHTML</span><span class="p">(</span><span class="n">html_content_with_css</span><span class="p">)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="vm">__name__</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="w">    </span><span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+</div>
+<h3 id="_5">スクリプト起動方法</h3>
+<div class="admonition indent">
+<p>スクリプトは以下のようにして起動する。</p>
+<p>$ python3 md2html.py --src-md-path _edit0_index.md --src-css-path edit0.css --dist-html-path index.html</p>
+<h4 id="_6">コマンドライン引数説明</h4>
+<div class="admonition indent">
+<table>
+<thead>
+<tr>
+<th>引数名</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--src-md-path</td>
+<td>○</td>
+<td>変換元のMarkdownファイルのパス</td>
+</tr>
+<tr>
+<td>--src-css-path</td>
+<td>-</td>
+<td>変換元のCSSファイルのパス</td>
+</tr>
+<tr>
+<td>--dist-html-path</td>
+<td>○</td>
+<td>変換先のHTMLファイルのパス</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="_7">必要な外部ライブラリ <a id="furoku-convert-script-require-lib"></h3>
+<div class="admonition indent">
+<p>スクリプトは以下の外部ライブラリを使用する。</p>
+<ul>
+<li><a href="https://python-markdown.github.io/">Python-Markdown</a></li>
+</ul>
+</div>
+<h3 id="_8">拡張機能カススタイズ</h3>
+<div class="admonition indent">
+<p><a href="#furoku-convert-script-this">スクリプト本文中</a>の<strong># 拡張機能を有効化</strong>の部分にて拡張機能のカスタマイズを行うことができる。<br />
+カスタマイズにあたっては<a href="https://python-markdown.github.io/extensions/">Python-Markdown公式ドキュメント</a>を参照すること。</p>
+</div>
+</div>
+</div>
