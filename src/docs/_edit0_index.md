@@ -9,7 +9,7 @@
 
 # 2.基本構想
 !!! indent ""
-    本項にて基本構想について説明する。
+    本項にて基本構想を説明する。
 
     生成するドキュメントはHTML形式であるが、生成元たるファイルは用途ごとに以下のようになる。
 
@@ -34,7 +34,7 @@
 
 # 3.開発環境
 !!! indent ""
-    本項にて開発環境について説明する。
+    本項にて開発環境を説明する。
 
     **Python3** がインストールされていることが前提となる。<br />
     それ以外は特に指定をしない。
@@ -313,7 +313,7 @@
         !!! indent ""
             スクリプトは以下のようにして起動する。
 
-            $ python3 md2html.py --src-md-path _edit0_index.md --src-css-path edit0.css --dist-html-path index.html
+                $ python3 md2html.py --src-md-path _edit0_index.md --src-css-path edit0.css --dist-html-path index.html
 
             #### コマンドライン引数説明
             !!! indent ""
