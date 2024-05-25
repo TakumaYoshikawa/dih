@@ -336,4 +336,4 @@
 
     ## サンプル
     !!! indent ""
-        本ドキュメントの生成元たる一式ファイルは[此処](https://github.com/TakumaYoshikawa/dih/tree/master/src/docs)にある。<br />
+        本ドキュメントの生成元たる一式ファイルは[此処](https://github.com/TakumaYoshikawa/dih/tree/master/src/docs)にある。
