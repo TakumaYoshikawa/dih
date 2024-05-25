@@ -70,12 +70,14 @@ class MainFlow():
 
         # HTML 変換
         md = markdown.Markdown(
+            # 拡張機能を有効化(https://python-markdown.github.io/extensions/)
             extensions=[
-                InlineImageExtension(), # 画像のインライン化
+                InlineImageExtension(), # 画像のインライン化(自作拡張機能)
                 'tables', # テーブル
                 'footnotes', # 脚注
                 'toc', # 目次
                 'admonition', # 注意書き(<div>タグ)
+                'codehilite', # シンタックスハイライト
             ]
         )
         html_content = md.convert(markdown_content)
