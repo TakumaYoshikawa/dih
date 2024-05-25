@@ -69,7 +69,15 @@ class MainFlow():
                 md.treeprocessors.register(InlineImageMarkdownRenderer(md), 'inline_image', 15)
 
         # HTML 変換
-        md = markdown.Markdown(extensions=[InlineImageExtension(), 'tables', 'footnotes', 'toc', 'admonition'])
+        md = markdown.Markdown(
+            extensions=[
+                InlineImageExtension(), # 画像のインライン化
+                'tables', # テーブル
+                'footnotes', # 脚注
+                'toc', # 目次
+                'admonition', # 注意書き(<div>タグ)
+            ]
+        )
         html_content = md.convert(markdown_content)
 
         return html_content
