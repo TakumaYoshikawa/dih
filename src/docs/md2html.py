@@ -70,7 +70,6 @@ class MainFlow():
 
         # HTML 変換
         md = markdown.Markdown(
-            # 拡張機能を有効化(https://python-markdown.github.io/extensions/)
             extensions=[
                 InlineImageExtension(), # 画像のインライン化(自作拡張機能)
                 'tables', # テーブル
@@ -82,27 +81,44 @@ class MainFlow():
         )
         html_content = md.convert(markdown_content)
 
-        return html_content
+        return '<body>' + html_content + '</body>'
     
-    def AddCSS(self, html_content):
-        if not self.args.src_css_path:
-            return html_content
-        else:
-            with open(self.args.src_css_path, 'r') as f:
-                css_data = f.read()
-                return f'<style>{css_data}</style>' + html_content
+    def AddHead(self, html_content):
+        def _addCSS():
+            if not self.args.src_css_path:
+                return ''
+            else:
+                with open(self.args.src_css_path, 'r') as f:
+                    css_data = f.read()
+                    return f'<style>{css_data}</style>'
+
+        def _makeTitle():        
+            # ファイル名を取得し、拡張子を除去
+            file_name = os.path.basename(self.args.dist_html_path)
+            title = os.path.splitext(file_name)[0]
+            return title
+    
+        s = '<head>'
+        s += _addCSS()
+        s += '<title>{}</title>'.format(_makeTitle())
+        s += '</head>'
+        return s + html_content
 
     def WriteHTML(self, html_content):
         with open(self.args.dist_html_path, 'w', encoding='utf-8') as file:
             file.write(html_content)
         print(f'HTML file generated: {self.args.dist_html_path}')
+    
+    def AddHTML(self, html_content):
+        return '<!DOCTYPE html><html>' + html_content + '</html>'
 
 def main():
     mian_flow = MainFlow()
     markdown_content = mian_flow.ReadMarkdown()
     html_content = mian_flow.Convert(markdown_content)
-    html_content_with_css = mian_flow.AddCSS(html_content)
-    mian_flow.WriteHTML(html_content_with_css)
+    html_content = mian_flow.AddHead(html_content)
+    html_content = mian_flow.AddHTML(html_content)
+    mian_flow.WriteHTML(html_content)
 
 
 if __name__ == '__main__':

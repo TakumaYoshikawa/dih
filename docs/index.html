@@ -1,4 +1,4 @@
-<style>h1 {
+<!DOCTYPE html><html><head><style>h1 {
     background-color: #64cadcff;
     padding: 6px 2px;
 }
@@ -123,7 +123,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .codehilite .vi { color: #19177C } /* Name.Variable.Instance */
 .codehilite .vm { color: #19177C } /* Name.Variable.Magic */
 .codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
-</style><h1 id="_1">目次</h1>
+</style><title>index</title></head><body><h1 id="_1">目次</h1>
 <div class="toc">
 <ul>
 <li><a href="#_1">目次</a></li>
@@ -387,11 +387,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<h1 id="_2">付録 <a id="furoku"></h1>
+<h1 id="_2">付録 <a id="furoku"></a></h1>
 <div class="admonition indent">
-<h2 id="_3">変換スクリプト <a id="furoku-convert-script"></h2>
+<h2 id="_3">変換スクリプト <a id="furoku-convert-script"></a></h2>
 <div class="admonition indent">
-<h3 id="_4">スクリプト本文 <a id="furoku-convert-script-this"></h3>
+<h3 id="_4">スクリプト本文 <a id="furoku-convert-script-this"></a></h3>
 <div class="admonition indent">
 <p><code>md2html.py</code></p>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
@@ -465,7 +465,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <span class="w">        </span><span class="c1"># HTML 変換</span>
 <span class="w">        </span><span class="n">md</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">markdown</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span>
-<span class="w">            </span><span class="c1"># 拡張機能を有効化</span>
 <span class="w">            </span><span class="n">extensions</span><span class="o">=</span><span class="p">[</span>
 <span class="w">                </span><span class="n">InlineImageExtension</span><span class="p">(),</span><span class="w"> </span><span class="c1"># 画像のインライン化(自作拡張機能)</span>
 <span class="w">                </span><span class="s1">&#39;tables&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># テーブル</span>
@@ -477,27 +476,44 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">        </span><span class="p">)</span>
 <span class="w">        </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">md</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">)</span>
 
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">html_content</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;&lt;body&gt;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">html_content</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&lt;/body&gt;&#39;</span>
 
-<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">AddCSS</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">html_content</span><span class="p">):</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_css_path</span><span class="p">:</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">html_content</span>
-<span class="w">        </span><span class="k">else</span><span class="p">:</span>
-<span class="w">            </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_css_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">f</span><span class="p">:</span>
-<span class="w">                </span><span class="n">css_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;&lt;style&gt;</span><span class="si">{</span><span class="n">css_data</span><span class="si">}</span><span class="s1">&lt;/style&gt;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">html_content</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">AddHead</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">html_content</span><span class="p">):</span>
+<span class="w">        </span><span class="k">def</span><span class="w"> </span><span class="nf">_addCSS</span><span class="p">():</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_css_path</span><span class="p">:</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+<span class="w">            </span><span class="k">else</span><span class="p">:</span>
+<span class="w">                </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_css_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">f</span><span class="p">:</span>
+<span class="w">                    </span><span class="n">css_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;&lt;style&gt;</span><span class="si">{</span><span class="n">css_data</span><span class="si">}</span><span class="s1">&lt;/style&gt;&#39;</span>
+
+<span class="w">        </span><span class="k">def</span><span class="w"> </span><span class="nf">_makeTitle</span><span class="p">():</span><span class="w">        </span>
+<span class="w">            </span><span class="c1"># ファイル名を取得し、拡張子を除去</span>
+<span class="w">            </span><span class="n">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dist_html_path</span><span class="p">)</span>
+<span class="w">            </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file_name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">title</span>
+
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;head&gt;&#39;</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">_addCSS</span><span class="p">()</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;&lt;title&gt;</span><span class="si">{}</span><span class="s1">&lt;/title&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">_makeTitle</span><span class="p">())</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;&lt;/head&gt;&#39;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">html_content</span>
 
 <span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">WriteHTML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">html_content</span><span class="p">):</span>
 <span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dist_html_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">file</span><span class="p">:</span>
 <span class="w">            </span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
 <span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;HTML file generated: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dist_html_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">AddHTML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">html_content</span><span class="p">):</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;&lt;!DOCTYPE html&gt;&lt;html&gt;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">html_content</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&lt;/html&gt;&#39;</span>
+
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
 <span class="w">    </span><span class="n">mian_flow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MainFlow</span><span class="p">()</span>
 <span class="w">    </span><span class="n">markdown_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">ReadMarkdown</span><span class="p">()</span>
 <span class="w">    </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">Convert</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">)</span>
-<span class="w">    </span><span class="n">html_content_with_css</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">AddCSS</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
-<span class="w">    </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">WriteHTML</span><span class="p">(</span><span class="n">html_content_with_css</span><span class="p">)</span>
+<span class="w">    </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">AddHead</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
+<span class="w">    </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">AddHTML</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
+<span class="w">    </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">WriteHTML</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
 
 <span class="k">if</span><span class="w"> </span><span class="vm">__name__</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 <span class="w">    </span><span class="n">main</span><span class="p">()</span>
@@ -540,7 +556,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </table>
 </div>
 </div>
-<h3 id="_7">必要な外部ライブラリ <a id="furoku-convert-script-require-lib"></h3>
+<h3 id="_7">必要な外部ライブラリ <a id="furoku-convert-script-require-lib"></a></h3>
 <div class="admonition indent">
 <p>スクリプトは以下の外部ライブラリを使用する。</p>
 <ul>
@@ -557,4 +573,4 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="admonition indent">
 <p>本ドキュメントの生成元たるファイルの一式は<a href="https://github.com/TakumaYoshikawa/dih/tree/master/src/docs">此処</a>にあり。</p>
 </div>
-</div>
+</div></body></html>
