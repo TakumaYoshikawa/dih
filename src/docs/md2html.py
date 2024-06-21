@@ -100,6 +100,7 @@ class MainFlow():
     
         s = '<head>'
         s += _addCSS()
+        s += '<meta charset="utf-8">'
         s += '<title>{}</title>'.format(_makeTitle())
         s += '</head>'
         return s + html_content
