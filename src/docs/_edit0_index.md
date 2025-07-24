@@ -226,4 +226,4 @@
 
     ## 生成元ファイルのサンプル
     !!! indent ""
-        本ドキュメントの生成元たるファイルの一式は[此処](https://github.com/TakumaYoshikawa/dih/tree/master/src/docs)にあり。
+        本ドキュメントの生成元たるファイルの一式は[ここ](https://github.com/TakumaYoshikawa/dih/tree/master/src/docs)。
