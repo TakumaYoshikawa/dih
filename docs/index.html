@@ -263,16 +263,16 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="admonition indent">
 <p>以下のMarkdownファイルを作成する。</p>
 <p><code>example.md</code></p>
-<div class="codehilite"><pre><span></span><code># チュートリアル
+<pre class="codehilite"><code># チュートリアル
 これはチュートリアルです。
-</code></pre></div>
+</code></pre>
 
 </div>
 <h3 id="4a3">4.a.3.変換処理の実行</h3>
 <div class="admonition indent">
 <p>スクリプトを用いてHTMLファイルを生成する。</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>md2html.py<span class="w"> </span>--src-md-path<span class="w"> </span>example.md<span class="w"> </span>--dist-html-path<span class="w"> </span>example.html
-</code></pre></div>
+<pre class="codehilite"><code>$ python3 md2html.py --src-md-path example.md --dist-html-path example.html
+</code></pre>
 
 <p>これにて<strong>example.html</strong>が生成される。</p>
 </div>
@@ -289,27 +289,27 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="admonition indent">
 <p>以下のMarkdownファイルを作成する。</p>
 <p><code>example.md</code></p>
-<div class="codehilite"><pre><span></span><code># チュートリアル
+<pre class="codehilite"><code># チュートリアル
 これはチュートリアルです。
-</code></pre></div>
+</code></pre>
 
 </div>
 <h3 id="4b3css">4.b.3.文章デザインたるCSSファイルの作成</h3>
 <div class="admonition indent">
 <p>以下のCSSファイルを作成する。</p>
 <p><code>example.css</code></p>
-<div class="codehilite"><pre><span></span><code><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#64cadc</span><span class="n">ff</span><span class="p">;</span>
-<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code>h1 {
+    background-color: #64cadcff;
+    padding: 6px 2px;
+}
+</code></pre>
 
 </div>
 <h3 id="4b4">4.b.4.変換処理の実行</h3>
 <div class="admonition indent">
 <p>スクリプトを用いてHTMLファイルを生成する。</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>md2html.py<span class="w"> </span>--src-md-path<span class="w"> </span>example.md<span class="w"> </span>--src-css-path<span class="w"> </span>example.css<span class="w"> </span>--dist-html-path<span class="w"> </span>example.html
-</code></pre></div>
+<pre class="codehilite"><code>$ python3 md2html.py --src-md-path example.md --src-css-path example.css --dist-html-path example.html
+</code></pre>
 
 <p>これにて文章デザインを適用が適用された<strong>example.html</strong>が生成される。<br />
 また、CSSファイルのデータがHTMLファイルに埋め込まれている。</p>
@@ -327,11 +327,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="admonition indent">
 <p>以下のMarkdownファイルを作成する。</p>
 <p><code>example.md</code></p>
-<div class="codehilite"><pre><span></span><code># チュートリアル
+<pre class="codehilite"><code># チュートリアル
 これはチュートリアルです。
 
 ![画像](./images/img.1.img-1.drawio.png)
-</code></pre></div>
+</code></pre>
 
 <p>Markdownの記法にて画像を埋め込む記述する。</p>
 </div>
@@ -346,8 +346,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h3 id="4c4">4.c.4.変換処理の実行</h3>
 <div class="admonition indent">
 <p>スクリプトを用いてHTMLファイルを生成する。</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>md2html.py<span class="w"> </span>--src-md-path<span class="w"> </span>example.md<span class="w"> </span>--dist-html-path<span class="w"> </span>example.html
-</code></pre></div>
+<pre class="codehilite"><code>$ python3 md2html.py --src-md-path example.md --dist-html-path example.html
+</code></pre>
 
 <p>これにて画像が埋め込まれた<strong>example.html</strong>が生成される。<br />
 また、画像ファイルのデータがHTMLファイルに埋め込まれている。</p>
@@ -365,23 +365,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="admonition indent">
 <p>インデントのスタイルを記述するためのCSSファイルに以下の記述をする。</p>
 <p><code>example.css</code></p>
-<div class="codehilite"><pre><span></span><code><span class="na">.indent</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nl">padding-left:</span><span class="w"> </span><span class="err">20</span><span class="nf">px</span><span class="c1">;　/* これにより右に字下げ */</span>
-<span class="w">    </span><span class="nl">border-left:</span><span class="w"> </span><span class="err">1</span><span class="nf">px</span><span class="w"> </span><span class="no">solid</span><span class="w"> </span><span class="c1">#eeeeee;　/* 左側の線 */</span>
-<span class="err">}</span>
-</code></pre></div>
+<pre class="codehilite"><code>.indent {
+    padding-left: 20px;　/* これにより右に字下げ */
+    border-left: 1px solid #eeeeee;　/* 左側の線 */
+}
+</code></pre>
 
 </div>
 <h3 id="5a2">5.a.2.本文へのインデントの記述</h3>
 <div class="admonition indent">
 <p>本文中でインデントを用いる際は以下のように記述する。</p>
 <p><code>example.md</code></p>
-<div class="codehilite"><pre><span></span><code># インデント
+<pre class="codehilite"><code># インデント
 !!! indent &quot;&quot;
     ここにインデントする文章を記述する。
 
 この文章はインデントされない。
-</code></pre></div>
+</code></pre>
 
 <p>これにてインデントされた文章が生成される。</p>
 </div>
@@ -391,140 +391,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="admonition indent">
 <h2 id="_3">変換スクリプト <a id="furoku-convert-script"></a></h2>
 <div class="admonition indent">
-<h3 id="_4">スクリプト本文 <a id="furoku-convert-script-this"></a></h3>
+<h3 id="_4">スクリプト本文</h3>
 <div class="admonition indent">
-<p><code>md2html.py</code></p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">markdown</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">MainFlow</span><span class="p">():</span>
-<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="n">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Markdown to HTML converter&quot;</span><span class="p">)</span>
-<span class="w">        </span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--src-md-path&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span><span class="w"> </span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the source Markdown file&quot;</span><span class="p">)</span>
-<span class="w">        </span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--src-css-path&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span><span class="w"> </span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the CSS file&quot;</span><span class="p">)</span>
-<span class="w">        </span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--dist-html-path&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span><span class="w"> </span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the destination HTML file&quot;</span><span class="p">)</span>
-
-<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">_argsCheck</span><span class="p">()</span>
-
-<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">_argsCheck</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_md_path</span><span class="p">:</span>
-<span class="w">            </span><span class="k">raise</span><span class="w"> </span><span class="n">ValueError</span><span class="p">(</span><span class="s1">&#39;The source Markdown file path is required &quot;--src-md-path&quot;&#39;</span><span class="p">)</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dist_html_path</span><span class="p">:</span>
-<span class="w">            </span><span class="k">raise</span><span class="w"> </span><span class="n">ValueError</span><span class="p">(</span><span class="s1">&#39;The destination HTML file path is required &quot;--dist-html-path&quot;&#39;</span><span class="p">)</span>
-
-<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">ReadMarkdown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_md_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">file</span><span class="p">:</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">Convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">markdown_content</span><span class="p">):</span>
-<span class="w">        </span><span class="c1"># 画像のインライン化関数</span>
-<span class="w">        </span><span class="k">def</span><span class="w"> </span><span class="nf">_inlineImage</span><span class="p">(</span><span class="n">src</span><span class="p">):</span>
-<span class="w">            </span><span class="n">image_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_md_path</span><span class="p">),</span><span class="w"> </span><span class="n">src</span><span class="p">)</span>
-<span class="w">            </span><span class="n">ext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">image_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="w">            </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
-
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;.svg&#39;</span><span class="p">:</span>
-<span class="w">                </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;image/svg+xml&#39;</span>
-<span class="w">            </span><span class="k">elif</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;.png&#39;</span><span class="p">:</span>
-<span class="w">                </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;image/png&#39;</span>
-<span class="w">            </span><span class="k">elif</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;.jpg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;.jpeg&#39;</span><span class="p">]:</span>
-<span class="w">                </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;image/jpeg&#39;</span>
-<span class="w">            </span><span class="k">elif</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;.gif&#39;</span><span class="p">:</span>
-<span class="w">                </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;image/gif&#39;</span>
-<span class="w">            </span><span class="k">else</span><span class="p">:</span>
-<span class="w">                </span><span class="k">raise</span><span class="w"> </span><span class="n">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unsupported image type: </span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="w">            </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">image_file</span><span class="p">:</span>
-<span class="w">                </span><span class="n">image_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">mime_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;image/svg+xml&#39;</span><span class="p">:</span>
-<span class="w">            </span><span class="c1"># SVG データを URL エンコードする</span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;data:</span><span class="si">{</span><span class="n">mime_type</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">image_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span>
-<span class="w">            </span><span class="k">else</span><span class="p">:</span>
-<span class="w">                </span><span class="c1"># 他の画像データを base64 エンコードする</span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;data:</span><span class="si">{</span><span class="n">mime_type</span><span class="si">}</span><span class="s1">;base64,</span><span class="si">{</span><span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span>
-
-<span class="w">        </span><span class="c1"># カスタム Markdown パーサー</span>
-<span class="w">        </span><span class="k">class</span><span class="w"> </span><span class="nc">InlineImageMarkdownRenderer</span><span class="p">(</span><span class="n">markdown</span><span class="o">.</span><span class="n">treeprocessors</span><span class="o">.</span><span class="n">Treeprocessor</span><span class="p">):</span>
-<span class="w">            </span><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">):</span>
-<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">root</span><span class="o">.</span><span class="n">iter</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">):</span>
-<span class="w">                    </span><span class="n">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">)</span>
-<span class="w">                    </span><span class="n">inline_src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_inlineImage</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
-<span class="w">                    </span><span class="n">element</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">inline_src</span><span class="p">)</span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">root</span>
-
-<span class="w">        </span><span class="k">class</span><span class="w"> </span><span class="nc">InlineImageExtension</span><span class="p">(</span><span class="n">markdown</span><span class="o">.</span><span class="n">extensions</span><span class="o">.</span><span class="n">Extension</span><span class="p">):</span>
-<span class="w">            </span><span class="k">def</span><span class="w"> </span><span class="nf">extendMarkdown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">md</span><span class="p">):</span>
-<span class="w">                </span><span class="n">md</span><span class="o">.</span><span class="n">treeprocessors</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">InlineImageMarkdownRenderer</span><span class="p">(</span><span class="n">md</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;inline_image&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span>
-
-<span class="w">        </span><span class="c1"># HTML 変換</span>
-<span class="w">        </span><span class="n">md</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">markdown</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span>
-<span class="w">            </span><span class="n">extensions</span><span class="o">=</span><span class="p">[</span>
-<span class="w">                </span><span class="n">InlineImageExtension</span><span class="p">(),</span><span class="w"> </span><span class="c1"># 画像のインライン化(自作拡張機能)</span>
-<span class="w">                </span><span class="s1">&#39;tables&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># テーブル</span>
-<span class="w">                </span><span class="s1">&#39;footnotes&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># 脚注</span>
-<span class="w">                </span><span class="s1">&#39;toc&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># 目次</span>
-<span class="w">                </span><span class="s1">&#39;admonition&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># 注意書き(&lt;div&gt;タグ)</span>
-<span class="w">                </span><span class="s1">&#39;codehilite&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1"># シンタックスハイライト</span>
-<span class="w">            </span><span class="p">]</span>
-<span class="w">        </span><span class="p">)</span>
-<span class="w">        </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">md</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">)</span>
-
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;&lt;body&gt;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">html_content</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&lt;/body&gt;&#39;</span>
-
-<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">AddHead</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">html_content</span><span class="p">):</span>
-<span class="w">        </span><span class="k">def</span><span class="w"> </span><span class="nf">_addCSS</span><span class="p">():</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_css_path</span><span class="p">:</span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
-<span class="w">            </span><span class="k">else</span><span class="p">:</span>
-<span class="w">                </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">src_css_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">f</span><span class="p">:</span>
-<span class="w">                    </span><span class="n">css_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;&lt;style&gt;</span><span class="si">{</span><span class="n">css_data</span><span class="si">}</span><span class="s1">&lt;/style&gt;&#39;</span>
-
-<span class="w">        </span><span class="k">def</span><span class="w"> </span><span class="nf">_makeTitle</span><span class="p">():</span><span class="w">        </span>
-<span class="w">            </span><span class="c1"># ファイル名を取得し、拡張子を除去</span>
-<span class="w">            </span><span class="n">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dist_html_path</span><span class="p">)</span>
-<span class="w">            </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file_name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">title</span>
-
-<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;head&gt;&#39;</span>
-<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">_addCSS</span><span class="p">()</span>
-<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;&lt;title&gt;</span><span class="si">{}</span><span class="s1">&lt;/title&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">_makeTitle</span><span class="p">())</span>
-<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;&lt;/head&gt;&#39;</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">html_content</span>
-
-<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">WriteHTML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">html_content</span><span class="p">):</span>
-<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dist_html_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">file</span><span class="p">:</span>
-<span class="w">            </span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
-<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;HTML file generated: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dist_html_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">AddHTML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">html_content</span><span class="p">):</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;&lt;!DOCTYPE html&gt;&lt;html&gt;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">html_content</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&lt;/html&gt;&#39;</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<span class="w">    </span><span class="n">mian_flow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MainFlow</span><span class="p">()</span>
-<span class="w">    </span><span class="n">markdown_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">ReadMarkdown</span><span class="p">()</span>
-<span class="w">    </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">Convert</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">)</span>
-<span class="w">    </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">AddHead</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
-<span class="w">    </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">AddHTML</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
-<span class="w">    </span><span class="n">mian_flow</span><span class="o">.</span><span class="n">WriteHTML</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
-
-<span class="k">if</span><span class="w"> </span><span class="vm">__name__</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="w">    </span><span class="n">main</span><span class="p">()</span>
-</code></pre></div>
-
+<p><a href="https://github.com/TakumaYoshikawa/dih/blob/master/src/docs/md2html.py">https://github.com/TakumaYoshikawa/dih/blob/master/src/docs/md2html.py</a></p>
 </div>
 <h3 id="_5">スクリプト起動方法</h3>
 <div class="admonition indent">
 <p>スクリプトは以下のようにして起動する。</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>md2html.py<span class="w"> </span>--src-md-path<span class="w"> </span>_edit0_index.md<span class="w"> </span>--src-css-path<span class="w"> </span>edit0.css<span class="w"> </span>--dist-html-path<span class="w"> </span>index.html
-</code></pre></div>
+<pre class="codehilite"><code>$ python3 md2html.py --src-md-path _edit0_index.md --src-css-path edit0.css --dist-html-path index.html
+</code></pre>
 
 <h4 id="_6">コマンドライン引数説明</h4>
 <div class="admonition indent">
@@ -571,6 +446,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <h2 id="_9">生成元ファイルのサンプル</h2>
 <div class="admonition indent">
-<p>本ドキュメントの生成元たるファイルの一式は<a href="https://github.com/TakumaYoshikawa/dih/tree/master/src/docs">此処</a>にあり。</p>
+<p>本ドキュメントの生成元たるファイルの一式は<a href="https://github.com/TakumaYoshikawa/dih/tree/master/src/docs">ここ</a>。</p>
 </div>
 </div></body></html>

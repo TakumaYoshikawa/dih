@@ -1,1 +1,1 @@
-説明は[此処](https://takumayoshikawa.github.io/dih/)にあり。
+[説明](https://takumayoshikawa.github.io/dih/)
